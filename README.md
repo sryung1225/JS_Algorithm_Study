@@ -37,5 +37,5 @@
 | 0 | [배열 두 배 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/120809) | [배열두배만들기.js](./Level0/배열두배만들기.js)
 | 0 | [나머지 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/120810) | [나머지구하기.js](./Level0/나머지구하기.js)
 | 0 | [중앙값 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/120811) | [중앙값구하기.js](./Level0/중앙값구하기.js)
-| 0 | [최빈값 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/120812) |  |
+| 0 | [최빈값 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/120812) | [최빈값구하기.js](./Level0/최빈값구하기.js) |
 | 0 | [짝수는 싫어요](https://school.programmers.co.kr/learn/courses/30/lessons/120813) | [짝수는싫어요.js](./Level0/짝수는싫어요.js)
