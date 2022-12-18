@@ -37,5 +37,9 @@
 | 0 | [배열 두 배 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/120809) | [배열두배만들기.js](./Level0/배열두배만들기.js)
 | 0 | [나머지 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/120810) | [나머지구하기.js](./Level0/나머지구하기.js)
 | 0 | [중앙값 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/120811) | [중앙값구하기.js](./Level0/중앙값구하기.js)
-| 0 | [최빈값 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/120812) | [최빈값구하기.js](./Level0/최빈값구하기.js) |
+| 0 | [최빈값 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/120812) | [최빈값구하기.js](./Level0/최빈값구하기.js)
 | 0 | [짝수는 싫어요](https://school.programmers.co.kr/learn/courses/30/lessons/120813) | [짝수는싫어요.js](./Level0/짝수는싫어요.js)
+| 0 | [피자 나눠 먹기 (1)](https://school.programmers.co.kr/learn/courses/30/lessons/120814) | [피자나눠먹기(1).js](./Level0/피자나눠먹기(1).js)
+| 0 | [피자 나눠 먹기 (2)](https://school.programmers.co.kr/learn/courses/30/lessons/120815) | [피자나눠먹기(2).js](./Level0/피자나눠먹기(2).js)
+| 0 | [피자 나눠 먹기 (3)](https://school.programmers.co.kr/learn/courses/30/lessons/120816) | [피자나눠먹기(3).js](./Level0/피자나눠먹기(3).js)
+| 0 | [배열의 평균값](https://school.programmers.co.kr/learn/courses/30/lessons/120817) | [배열의평균값.js](./Level0/배열의평균값.js)
