@@ -7,7 +7,7 @@
 문제 풀이를 완료하는 경우 커밋을 진행합니다.
 
 ### 🌱 현재 단계
-- 1주차
+- 2주차
 - 프로그래머스 코딩테스트 입문 Level 0 풀이
 - ![프로그래머스 현재 상태](./assets/status_programmers.PNG)
 
@@ -43,3 +43,7 @@
 | 0 | [피자 나눠 먹기 (2)](https://school.programmers.co.kr/learn/courses/30/lessons/120815) | [피자나눠먹기(2).js](./Level0/피자나눠먹기(2).js)
 | 0 | [피자 나눠 먹기 (3)](https://school.programmers.co.kr/learn/courses/30/lessons/120816) | [피자나눠먹기(3).js](./Level0/피자나눠먹기(3).js)
 | 0 | [배열의 평균값](https://school.programmers.co.kr/learn/courses/30/lessons/120817) | [배열의평균값.js](./Level0/배열의평균값.js)
+| 0 | [옷가게 할인 받기](https://school.programmers.co.kr/learn/courses/30/lessons/120818) | [옷가게할인받기.js](./Level0/옷가게할인받기.js)
+| 0 | [아이스 아메리카노](https://school.programmers.co.kr/learn/courses/30/lessons/120819) | [아이스아메리카노.js](./Level0/아이스아메리카노.js)
+| 0 | [나이 출력](https://school.programmers.co.kr/learn/courses/30/lessons/120820) | [나이출력.js](./Level0/나이출력.js)
+| 0 | [배열 뒤집기](https://school.programmers.co.kr/learn/courses/30/lessons/120821) | [배열뒤집기.js](./Level0/배열뒤집기.js)
