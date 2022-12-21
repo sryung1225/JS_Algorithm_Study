@@ -53,3 +53,7 @@
 | 0 | [직각삼각형 출력하기](https://school.programmers.co.kr/learn/courses/30/lessons/120823) | [직각삼각형출력하기.js](./Level0/직각삼각형출력하기.js)
 | 0 | [짝수 홀수 개수](https://school.programmers.co.kr/learn/courses/30/lessons/120824) | [짝수홀수개수.js](./Level0/짝수홀수개수.js)
 | 0 | [문자 반복 출력하기](https://school.programmers.co.kr/learn/courses/30/lessons/120825) | [문자반복출력하기.js](./Level0/문자반복출력하기.js)
+| 0 | [특정 문자 제거하기](https://school.programmers.co.kr/learn/courses/30/lessons/120826) | [특정문자제거하기.js](./Level0/특정문자제거하기.js)
+| 0 | [각도기](https://school.programmers.co.kr/learn/courses/30/lessons/120829) | [각도기.js](./Level0/각도기.js)
+| 0 | [양꼬치](https://school.programmers.co.kr/learn/courses/30/lessons/120830) | [양꼬치.js](./Level0/양꼬치.js)
+| 0 | [짝수의합](https://school.programmers.co.kr/learn/courses/30/lessons/120831) | [짝수의합.js](./Level0/짝수의합.js)
