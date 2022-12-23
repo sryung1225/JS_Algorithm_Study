@@ -68,3 +68,4 @@
 | 0 | [점의 위치 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/120841) | [점의위치구하기.js](./Level0/점의위치구하기.js)
 | 0 | [2차원으로 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/120842) | [2차원으로만들기.js](./Level0/2차원으로만들기.js)
 | 0 | [공 던지기](https://school.programmers.co.kr/learn/courses/30/lessons/120843) | [공던지기.js](./Level0/공던지기.js)
+| 0 | [배열 회전시키기](https://school.programmers.co.kr/learn/courses/30/lessons/120844) | [배열회전시키기.js](./Level0/배열회전시키기.js)
