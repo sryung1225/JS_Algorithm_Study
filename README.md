@@ -63,3 +63,4 @@
 | 0 | [순서쌍의 개수](https://school.programmers.co.kr/learn/courses/30/lessons/120836) | [순서쌍의개수.js](./Level0/순서쌍의개수.js)
 | 0 | [개미군단](https://school.programmers.co.kr/learn/courses/30/lessons/120837) | [개미군단.js](./Level0/개미군단.js)
 | 0 | [모스부호 (1)](https://school.programmers.co.kr/learn/courses/30/lessons/120838) | [모스부호(1).js](./Level0/모스부호(1).js)
+| 0 | [가위 바위 보](https://school.programmers.co.kr/learn/courses/30/lessons/120839) | [가위바위보.js](./Level0/가위바위보.js)
