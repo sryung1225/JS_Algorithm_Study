@@ -65,3 +65,4 @@
 | 0 | [모스부호 (1)](https://school.programmers.co.kr/learn/courses/30/lessons/120838) | [모스부호(1).js](./Level0/모스부호(1).js)
 | 0 | [가위 바위 보](https://school.programmers.co.kr/learn/courses/30/lessons/120839) | [가위바위보.js](./Level0/가위바위보.js)
 | 0 | [구슬을 나누는 경우의 수](https://school.programmers.co.kr/learn/courses/30/lessons/120840) | [구슬을나누는경우의수.js](./Level0/구슬을나누는경우의수.js)
+| 0 | [점의 위치 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/120841) | [점의위치구하기.js](./Level0/점의위치구하기.js)
