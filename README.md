@@ -71,3 +71,4 @@
 | 0 | [배열 회전시키기](https://school.programmers.co.kr/learn/courses/30/lessons/120844) | [배열회전시키기.js](./Level0/배열회전시키기.js)
 | 0 | [주사위의 개수](https://school.programmers.co.kr/learn/courses/30/lessons/120845) | [주사위의개수.js](./Level0/주사위의개수.js)
 | 0 | [합성수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/120847) | [합성수찾기.js](./Level0/합성수찾기.js)
+| 0 | [최대값 만들기 (1)](https://school.programmers.co.kr/learn/courses/30/lessons/120848) | [최대값만들기(1).js](./Level0/최대값만들기(1).js)
