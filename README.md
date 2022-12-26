@@ -70,3 +70,4 @@
 | 0 | [공 던지기](https://school.programmers.co.kr/learn/courses/30/lessons/120843) | [공던지기.js](./Level0/공던지기.js)
 | 0 | [배열 회전시키기](https://school.programmers.co.kr/learn/courses/30/lessons/120844) | [배열회전시키기.js](./Level0/배열회전시키기.js)
 | 0 | [주사위의 개수](https://school.programmers.co.kr/learn/courses/30/lessons/120845) | [주사위의개수.js](./Level0/주사위의개수.js)
+| 0 | [합성수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/120847) | [합성수찾기.js](./Level0/합성수찾기.js)
