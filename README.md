@@ -73,3 +73,4 @@
 | 0 | [합성수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/120846) | [합성수찾기.js](./Level0/합성수찾기.js)
 | 0 | [최대값 만들기 (1)](https://school.programmers.co.kr/learn/courses/30/lessons/120847) | [최대값만들기(1).js](./Level0/최대값만들기(1).js)
 | 0 | [팩토리얼](https://school.programmers.co.kr/learn/courses/30/lessons/120848) | [팩토리얼.js](./Level0/팩토리얼.js)
+| 0 | [모음 제거](https://school.programmers.co.kr/learn/courses/30/lessons/120849) | [모음제거.js](./Level0/모음제거.js)
