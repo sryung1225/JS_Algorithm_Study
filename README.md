@@ -76,3 +76,4 @@
 | 0 | [모음 제거](https://school.programmers.co.kr/learn/courses/30/lessons/120849) | [모음제거.js](./Level0/모음제거.js)
 | 0 | [문자열 정렬하기 (1)](https://school.programmers.co.kr/learn/courses/30/lessons/120850) | [문자열정렬하기(1).js](./Level0/문자열정렬하기(1).js)
 | 0 | [숨어있는 숫자의 덧셈 (1)](https://school.programmers.co.kr/learn/courses/30/lessons/120851) | [숨어있는숫자의덧셈(1).js](./Level0/숨어있는숫자의덧셈(1).js)
+| 0 | [소인수분해](https://school.programmers.co.kr/learn/courses/30/lessons/120852) | [소인수분해.js](./Level0/소인수분해.js)
