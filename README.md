@@ -78,3 +78,4 @@
 | 0 | [숨어있는 숫자의 덧셈 (1)](https://school.programmers.co.kr/learn/courses/30/lessons/120851) | [숨어있는숫자의덧셈(1).js](./Level0/숨어있는숫자의덧셈(1).js)
 | 0 | [소인수분해](https://school.programmers.co.kr/learn/courses/30/lessons/120852) | [소인수분해.js](./Level0/소인수분해.js)
 | 0 | [컨트롤 제트](https://school.programmers.co.kr/learn/courses/30/lessons/120853) | [컨트롤제트.js](./Level0/컨트롤제트.js)
+| 0 | [배열 원소의 길이](https://school.programmers.co.kr/learn/courses/30/lessons/120854) | [배열원소의길이.js](./Level0/배열원소의길이.js)
