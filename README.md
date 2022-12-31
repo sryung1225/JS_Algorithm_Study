@@ -84,3 +84,4 @@
 | 0 | [가까운 수](https://school.programmers.co.kr/learn/courses/30/lessons/120890) | [가까운수.js](./Level0/가까운수.js)
 | 0 | [369게임](https://school.programmers.co.kr/learn/courses/30/lessons/120891) | [369게임.js](./Level0/369게임.js)
 | 0 | [암호 해독](https://school.programmers.co.kr/learn/courses/30/lessons/120892) | [암호해독.js](./Level0/암호해독.js)
+| 0 | [대문자와 소문자](https://school.programmers.co.kr/learn/courses/30/lessons/120893) | [대문자와소문자.js](./Level0/대문자와소문자.js)
