@@ -81,3 +81,4 @@
 | 0 | [배열 원소의 길이](https://school.programmers.co.kr/learn/courses/30/lessons/120854) | [배열원소의길이.js](./Level0/배열원소의길이.js)
 | 0 | [중복된 문자 제거](https://school.programmers.co.kr/learn/courses/30/lessons/120888) | [중복된문자제거.js](./Level0/중복된문자제거.js)
 | 0 | [삼각형의 완성조건 (1)](https://school.programmers.co.kr/learn/courses/30/lessons/120889) | [삼각형의완성조건(1).js](./Level0/삼각형의완성조건(1).js)
+| 0 | [가까운 수](https://school.programmers.co.kr/learn/courses/30/lessons/120890) | [가까운수.js](./Level0/가까운수.js)
