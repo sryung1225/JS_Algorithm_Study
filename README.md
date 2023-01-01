@@ -88,3 +88,4 @@
 | 0 | [영어가 싫어요](https://school.programmers.co.kr/learn/courses/30/lessons/120894) | [영어가싫어요.js](./Level0/영어가싫어요.js)
 | 0 | [인덱스 바꾸기](https://school.programmers.co.kr/learn/courses/30/lessons/120895) | [인덱스바꾸기.js](./Level0/인덱스바꾸기.js)
 | 0 | [한 번만 등장한 문자](https://school.programmers.co.kr/learn/courses/30/lessons/120896) | [한번만등장한문자.js](./Level0/한번만등장한문자.js)
+| 0 | [약수 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/120897) | [약수구하기.js](./Level0/약수구하기.js)
