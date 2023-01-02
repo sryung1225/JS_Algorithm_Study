@@ -7,7 +7,7 @@
 문제 풀이를 완료하는 경우 커밋을 진행합니다.
 
 ### 🌱 현재 단계
-- 3주차
+- 4주차
 - 프로그래머스 코딩테스트 입문 Level 0 풀이
 - ![프로그래머스 현재 상태](./assets/status_programmers.PNG)
 
@@ -92,3 +92,4 @@
 | 0 | [편지](https://school.programmers.co.kr/learn/courses/30/lessons/120898) | [편지.js](./Level0/편지.js)
 | 0 | [가장 큰 수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/120899) | [가장큰수찾기.js](./Level0/가장큰수찾기.js)
 | 0 | [문자열 계산하기](https://school.programmers.co.kr/learn/courses/30/lessons/120902) | [문자열계산하기.js](./Level0/문자열계산하기.js)
+| 0 | [배열의 유사도](https://school.programmers.co.kr/learn/courses/30/lessons/120903) | [배열의유사도.js](./Level0/배열의유사도.js)
