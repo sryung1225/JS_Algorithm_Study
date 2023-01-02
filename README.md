@@ -91,3 +91,4 @@
 | 0 | [약수 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/120897) | [약수구하기.js](./Level0/약수구하기.js)
 | 0 | [편지](https://school.programmers.co.kr/learn/courses/30/lessons/120898) | [편지.js](./Level0/편지.js)
 | 0 | [가장 큰 수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/120899) | [가장큰수찾기.js](./Level0/가장큰수찾기.js)
+| 0 | [문자열 계산하기](https://school.programmers.co.kr/learn/courses/30/lessons/120902) | [문자열계산하기.js](./Level0/문자열계산하기.js)
