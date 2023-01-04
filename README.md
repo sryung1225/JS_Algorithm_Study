@@ -95,3 +95,4 @@
 | 0 | [배열의 유사도](https://school.programmers.co.kr/learn/courses/30/lessons/120903) | [배열의유사도.js](./Level0/배열의유사도.js)
 | 0 | [숫자 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/120904) | [숫자찾기.js](./Level0/숫자찾기.js)
 | 0 | [n의 배수 고르기](https://school.programmers.co.kr/learn/courses/30/lessons/120905) | [n의배수고르기.js](./Level0/n의배수고르기.js)
+| 0 | [자릿수 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/120906) | [자릿수더하기.js](./Level0/자릿수더하기.js)
