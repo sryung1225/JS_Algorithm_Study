@@ -1,11 +1,9 @@
 function solution(spell, dic) {
-    for (let i of dic){
-        let count = 0;
-        let word = new Array(...i);
-        for (let j of spell){
-            if(word.includes(j)) count++;
-        }
-        if(count === spell.length) return 1;
-    }
-    return 2;
+    // return dic.filter(v => spell.every(c => v.includes(c))).length ? 1 : 2;
+    let answer = dic.filter(v => spell.every(c => v.includes(c)));
+    //console.log(answer);
+    
+    if(answer.length) return 1;
+    else return 2;
+    
 }
