@@ -1,12 +1,14 @@
 function solution(sides) {
-    const s1 = Math.min(...sides);
-    const s2 = Math.max(...sides);
-    let answer = [];
-    for(let i=1; i<s1+s2; i++){
-        if(s2 < s1+i || i >= s2){
-            // console.log(i);
-            answer.push(i);
-        }
-    }   
-    return answer.length;
+	return Math.min(...sides)*2-1;
 }
+
+// 조건 따져보기 (a<b 일 때)
+// 1. b < a+c (b-a < c)
+// 2. c < a+b
+
+// 두 조건을 c 기준으로 합해보면
+// b-a < c < a+b
+
+// 즉, c의 갯수는
+// (a+b) - (b-a) - 1
+// 2a-1
