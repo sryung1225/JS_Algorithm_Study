@@ -1,7 +1,5 @@
 function solution(board) {
-    let result = 0;
     let n = board.length;
-    
     // 완전 탐색
     for(let i=0; i<n; i++) {
         for(let j=0; j<n; j++) {
@@ -18,7 +16,9 @@ function solution(board) {
             }
         }
     }
-    console.log(board);
-    board.forEach(a => a.forEach(b => b === 0 ? result++ : null))
+    //console.log(board);
+    
+    let result = 0;
+    board.forEach(i => i.forEach(j => j === 0 ? result++ : 0));
     return result
 }
