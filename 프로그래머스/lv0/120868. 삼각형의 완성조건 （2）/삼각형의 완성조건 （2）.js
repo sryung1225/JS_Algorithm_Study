@@ -1,8 +1,6 @@
 function solution(sides) {
-    sides.sort((a,b) => a-b); // 오름차순 정렬
-    const s1 = sides[0];
-    const s2 = sides[1];
-    
+    const s1 = Math.min(...sides);
+    const s2 = Math.max(...sides);
     let answer = [];
     for(let i=1; i<s1+s2; i++){
         if(s2 < s1+i || i >= s2){
