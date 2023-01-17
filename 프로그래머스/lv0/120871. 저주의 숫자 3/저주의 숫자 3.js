@@ -1,8 +1,10 @@
 function solution(n) {
-    let answer = 0;
-    for(let i=1; i<=n; i++){
-        answer++;
-        while(answer%3 === 0 || answer.toString().split("").includes("3")) answer++;
-    }
-    return answer;
+    let arr = [];
+    let num = 0;
+    while(arr.length !== n && ++num){
+		if(num%3 !== 0 && !(''+num).includes('3')){
+			arr.push(num);
+		}
+	}
+  return arr.pop(); // 마지막 num 반환
 }
