@@ -10,6 +10,7 @@
 - 5주차
 - 프로그래머스 코딩테스트 입문 Level 0 풀이
 - ![프로그래머스 현재 상태](./assets/status_programmers.PNG)
+- 제주코딩베이스캠프 : JS 100제 풀이
 
 ### 🎒 (메모) 문제 풀이 플랫폼 추천
 - [프로그래머스](https://programmers.co.kr/)
