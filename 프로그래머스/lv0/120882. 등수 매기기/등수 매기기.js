@@ -1,12 +1,14 @@
 function solution(score) {
-    // 평균 점수를 기준으로 나누지만
-    // 모두 두 과목이기 때문에 굳이 /2 없이 + 하는것으로도 비교 가능
-    
-    let arr = [...score] // 얕복(sort로 정렬되는 것 방지)
-                 .sort((a, b) => b[0]+b[1] - (a[0]+a[1])) // 더한값 큰 순으로 정렬 (내림차순)
-                 .map(x => x[0] + x[1]); // 더한값으로 배열 내용 변경
-    // console.log(arr);
-    
-    let answer = score.map(x => arr.indexOf(x[0]+x[1]) + 1);
-    return answer;
+    return score.map(el => {
+        return (
+            score.filter(v => v[0]+v[1] > el[0]+el[1]).length + 1
+        );
+    });
 }
+
+// score.map(el => { ~ }); : score 배열을 { ~ } 로 변경 예정
+// score.filter(v => 조건) : score 배열에서 조건을 만족하는 true인 값만 반환 예정
+// score.filter(v => v[0]+v[1] > el[0]+el[1]) : score 첫번째 값부터 갖고, 그것보다 큰 값이 존재하면 그 값을 배열로 저장
+//// ex) el=[80, 70] : score=[[90, 100],[100, 90],[100, 100]]
+// length + 1 : (위 score의 길이 + 1) = 등수
+//// score는 등수로 이루어진 배열이 됨
