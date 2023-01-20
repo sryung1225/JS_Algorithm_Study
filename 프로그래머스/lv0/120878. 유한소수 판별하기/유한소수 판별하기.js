@@ -1,22 +1,12 @@
 function solution(a, b) {
-    let answer = 1;
-    
     let gcd = 1;
-    for(let i=Math.min(a, b); i>=1; i--){
-        if(a%i === 0 && b%i === 0) {
-            gcd = i;
-            break;
-        }
+    for (let i=1; i<=Math.min(a,b); i++) {
+        if (a%i===0 && b%i===0) gcd = i;
     }
-    b = b/gcd;
+    b/=gcd;
+
+    while (b%2===0) b/=2;
+    while (b%5===0) b/=5;
     
-    while(b !== 1){
-        if(b%2 === 0) b/=2;
-        else if(b%5 === 0) b/=5;
-        else {
-            answer = 2;
-            break;
-        }
-    }
-    return answer;
+    return b === 1 ? 1 : 2;   
 }
