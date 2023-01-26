@@ -1,8 +1,5 @@
 function solution(num, total) {
-    let answer = [];
-    let x = (2*total - num*num + num)/(2*num);
-    for(let i=0; i<num; i++){
-        answer.push(x+i);
-    }
+    let x = total/num - num/2 + 1/2;
+    let answer = new Array(num).fill().map((_, i) => i+x);
     return answer;
 }
