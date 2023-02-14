@@ -1,7 +1,9 @@
 function solution(n) {
-    // console.log(Math.sqrt(n));
-    if(Number.isInteger(Math.sqrt(n))){
-        return Math.pow(Math.sqrt(n)+1, 2);
+    let i = 0;
+    while (i*i < n) i++;
+    if (i*i === n){
+        i++;
+        return i*i; 
     } else {
         return -1;
     }
