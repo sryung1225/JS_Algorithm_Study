@@ -8,7 +8,7 @@
 
 ### 🌱 현재 단계
 
-- 8주차 (프로젝트 중 휴식 중)
+- 9주차 (프로젝트 기한 휴식 제외)
 - 프로그래머스 코딩테스트 입문 Level 1 풀이
 - ![프로그래머스 현재 상태](./assets/status_programmers.PNG)
 - 제주코딩베이스캠프 : JS 100제 풀이
@@ -16,9 +16,9 @@
 ### 🎒 (메모) 문제 풀이 플랫폼 추천
 
 - [프로그래머스](https://programmers.co.kr/)
+- [제코베](https://paullab.co.kr/codefestival.html)
 - [백준](https://www.acmicpc.net/step)
   - [문제 추천](https://devjeong.com/algorithm/algorithm-1/#코딩-테스트-대비-백준-문제-추천)
-- [제코베](https://paullab.co.kr/codefestival.html)
 - [SW역량테스트](https://swexpertacademy.com/main/capacityTest/main.do)
 
 <br>
