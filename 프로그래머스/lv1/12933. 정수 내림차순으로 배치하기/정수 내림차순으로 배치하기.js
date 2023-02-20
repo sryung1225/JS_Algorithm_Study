@@ -1,3 +1,3 @@
 function solution(n) {
-    return Number(n.toString().split("").sort((a,b)=>b-a).join(""));
+    return +((n+"").split("").sort((a,b)=>b-a).join(""));
 }
