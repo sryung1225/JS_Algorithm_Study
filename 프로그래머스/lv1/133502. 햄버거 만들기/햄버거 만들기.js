@@ -1,17 +1,20 @@
+// slice 사용 대신에 push 를 이용해 시간복잡도를 줄이는 방법
 function solution(ingredient) {
     let answer = 0;
-    let size = ingredient.length - 3;
+    let arr = [];
 
-    for (let i = 0; i < size; i++) {
-        if (ingredient.slice(i, i + 4).toString() === "1,2,3,1") {
-            ingredient.splice(i, 4);
+    for (let i = 0; i < ingredient.length; i++) {
+        arr.push(ingredient[i]);
+        // console.log(arr);
+        if (
+            arr[arr.length - 1] === 1 &&
+            arr[arr.length - 2] === 3 &&
+            arr[arr.length - 3] === 2 &&
+            arr[arr.length - 4] === 1
+        ) {
+            arr.splice(-4);
             answer++;
-            i -= 3;
         }
     }
     return answer;
 }
-
-// 햄버거 순서 : 빵(1) -> 야채(2) -> 고기(3) -> 빵(1) -> (포장) : [1,2,3,1]
-// ex) [2,1,1,2,3,1,2,3,1]
-//     splice(2,4) => [2,1,2,3,1] => splice(1,4) => [2]
