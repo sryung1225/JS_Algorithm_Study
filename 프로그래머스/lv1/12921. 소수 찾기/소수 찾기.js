@@ -1,16 +1,19 @@
-// 계산을 도중에 끊기 용이하도록 소수 확인 함수를 분리
-function isPrime(x) {
-    let end = Math.sqrt(x); // 최적화 위해서 제곱근까지만 계산
-    for(let i=2; i<=end; i++){
-        if(x%i === 0) return false;
-    }
-    return true;
-}
-
 function solution(n) {
-    let answer = 0;
-    for(let i=2; i<=n; i++){
-        if(isPrime(i)) answer++;
+    const s = new Set();
+    for(let i=1; i<=n; i+=2){
+        s.add(i);
+    }    
+    s.delete(1);
+    s.add(2);
+    // console.log(s); // ? Set(n) { 2, 3, 5, 7, 9, 11, 13, ... }
+    
+    for(let j=3; j<Math.sqrt(n); j++){
+        if(s.has(j)){
+             for(let k=j*2; k<=n; k+=j){    
+                s.delete(k);
+             }
+        }
+        // console.log(s); // ? Set(n) { 2, 3, 5, 7, 11, 13, ... }
     }
-    return answer;
+    return s.size;
 }
