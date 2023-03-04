@@ -1,9 +1,4 @@
 function solution(phone_number) {
-    let answer = '';
-    let length = phone_number.length;
-    for(let i=0; i<length-4; i++){
-        answer += "*";
-    }
-    answer += phone_number.slice(length-4, length);
+    let answer = "*".repeat(phone_number.length - 4) + phone_number.slice(-4);
     return answer;
 }
