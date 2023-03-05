@@ -1,18 +1,20 @@
 function solution(s, n) {
+    // Ascii 코드 계산 없이 하는 방법
+    let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let lower = "abcdefghijklmnopqrstuvwxyz";
     let answer = '';
-    
-    // A ~ Z : 65 ~ 90
-    // a ~ z : 97 ~ 112
+
     for(let i of s){
-        let ascii = i.charCodeAt();
+        if(i === ' ') {
+            answer += i;
+            continue;
+        }
         
-        if(i === ' ') answer += i;
-        else answer += 
-            String.fromCharCode( 
-                (ascii > 90) 
-                ? (ascii + n - 97) % 26 + 97
-                : (ascii + n - 65) % 26 + 65
-            )
+        let textArr = upper.includes(i) ? upper : lower;
+        let index = textArr.indexOf(i) + n;
+        if(index >= textArr.length)
+            index -= textArr.length;
+        answer += textArr[index];
     }
     return answer;
 }
