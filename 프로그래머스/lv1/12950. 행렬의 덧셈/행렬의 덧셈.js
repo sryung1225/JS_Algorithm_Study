@@ -1,11 +1,10 @@
 function solution(arr1, arr2) {
-    let answer = [];
-    for(let i=0; i<arr1.length; i++){
-        let tmp = [];
-        for(let j=0; j<arr1[i].length; j++){
-            tmp.push(arr1[i][j] + arr2[i][j]);
-        }
-        answer.push(tmp);
-    }
+    let answer = arr1.map(
+                    (v1, i1) => v1.map(
+                        (v2, i2) => v2 + arr2[i1][i2]
+                    )
+                ); // 이중 배열
     return answer;
 }
+
+ 
