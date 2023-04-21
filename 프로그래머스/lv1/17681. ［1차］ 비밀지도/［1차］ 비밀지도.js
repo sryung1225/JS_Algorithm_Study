@@ -1,16 +1,10 @@
 function solution(n, arr1, arr2) {
-    let answer = [];
-    let con1, con2, str; // string 선언은 생략 가능
-    for(let i=0; i<n; i++){
-        con1 = arr1[i];
-        con2 = arr2[i];
-        str = "";
-        for(let j=0; j<n; j++){
-            str = (con1%2 + con2%2) ? "#"+str : " "+str;
-            con1 = Math.floor(con1/2);
-            con2 = Math.floor(con2/2);
-        }
-        answer.push(str);
-    }
+    let answer = arr1.map((v, i) =>
+                          (v|arr2[i]) // arr1[i] 와 arr2[i] 의 OR 결과를 반환
+                          .toString(2) // 2진수로 변환
+                          .padStart(n, 0) // 문자열의 길이가 n보다 작으면 왼쪽에 0을 채워 n글자로 만듦
+                          .replace(/0/g," ") // 0 => " "
+                          .replace(/1/g,"#") // 1 => "#"
+                         );
     return answer;
 }
