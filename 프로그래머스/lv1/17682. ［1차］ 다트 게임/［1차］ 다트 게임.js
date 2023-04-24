@@ -1,40 +1,28 @@
 function solution(dartResult) {
-    let answer = 0;
+    // 정규표현식 + 배열 조합
+    const bonus = { 'S': 1, 'D': 2, 'T': 3 };
+    const options = { '*': 2, '#': -1, undefined: 1 };
     
-    // 점수/보너스/옵션 배열로 분리 : 문자열 arr
-    let str = dartResult.split("");
-    let arr = [];
-    for(let i=0; i<str.length; i++){
-        if(!isNaN(str[i]) && !isNaN(str[i+1])){
-            arr.push(str[i]+str[i+1]);
-            i++;
-        } else {
-            arr.push(str[i]);
-        }
+    // 숫자 기준으로 배열화
+    let darts = dartResult.match(/\d.?\D/g);
+    // console.log(darts); // ? [ '1S*', '2T*', '3S' ]
+
+    for (let i = 0; i < darts.length; i++) {
+        let split = darts[i].match(/(^\d{1,})(S|D|T)(\*|#)?/);
+        let score = Math.pow(split[1], bonus[split[2]]) * options[split[3]];
+        // console.log(split, score);
+        // ? [ '1S*', '1', 'S', '*', index: 0, input: '1S*', groups: undefined ] 2
+        // ? [ '2T*', '2', 'T', '*', index: 0, input: '2T*', groups: undefined ] 16
+        // ? [ '3S', '3', 'S', undefined, index: 0, input: '3S', groups: undefined ] 3
+        
+        if (split[3] === '*' && darts[i-1]) 
+            darts[i-1] *= options['*'];
+
+        darts[i] = score;
+        // console.log(darts);
+        // ? [ 2, '2T*', '3S' ]
+        // ? [ 4, 16, '3S' ]
+        // ? [ 4, 16, 3 ]
     }
-    
-    let tmp1, tmp2 = 0;
-    for(let i of arr){
-        if(!isNaN(i)) {
-            if(tmp1){
-                answer += tmp1;
-                tmp2 = tmp1;
-            }
-            tmp1 = +i;
-        } else if(i === "S") {
-            tmp1 = Math.pow(tmp1, 1);
-        } else if(i === "D") {
-            tmp1 = Math.pow(tmp1, 2);
-        } else if(i === "T") {
-            tmp1 = Math.pow(tmp1, 3);
-        } else if(i === "*") {
-            tmp1 *= 2;
-            if(tmp2) answer += tmp2;
-        } else if(i === "#") {
-            tmp1 *= -1;
-        }
-        // console.log(`i는 ${i}, tmp1는 ${tmp1}, tmp2는 ${tmp2}, answer는 ${answer}`);
-    }
-    answer += tmp1;
-    return answer;
+    return darts.reduce((a, b) => a + b);
 }
