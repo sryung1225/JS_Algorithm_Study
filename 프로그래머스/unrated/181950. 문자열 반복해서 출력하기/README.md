@@ -1,10 +1,10 @@
 # [unrated] 문자열 반복해서 출력하기 - 181950 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181950) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181950?language=javascript) 
 
 ### 성능 요약
 
-메모리: 32.4 MB, 시간: 46.47 ms
+메모리: 32.3 MB, 시간: 50.75 ms
 
 ### 구분
 
