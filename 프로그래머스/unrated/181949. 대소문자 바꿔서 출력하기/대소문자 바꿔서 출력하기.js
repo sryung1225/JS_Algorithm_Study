@@ -10,11 +10,10 @@ rl.on('line', function (line) {
     input = [line];
 }).on('close',function(){
     str = input[0];
-    const arr = str.split("");
-    let answer = []; 
-    for(let i of arr){
-        if(i.toUpperCase() === i) answer.push(i.toLowerCase());
-        else answer.push(i.toUpperCase());
+    let answer = ""; 
+    for(let i of str){
+        if(i.toUpperCase() === i) answer += i.toLowerCase();
+        else answer += i.toUpperCase();
     }
-    console.log(answer.join(""));
+    console.log(answer);
 });
