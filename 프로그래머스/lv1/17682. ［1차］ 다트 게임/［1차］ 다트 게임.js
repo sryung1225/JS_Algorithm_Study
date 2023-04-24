@@ -1,5 +1,5 @@
 function solution(dartResult) {
-    // 정규표현식 + 배열 조합
+    // 정규표현식 + 객체 조합
     const bonus = { 'S': 1, 'D': 2, 'T': 3 };
     const options = { '*': 2, '#': -1, undefined: 1 };
     
