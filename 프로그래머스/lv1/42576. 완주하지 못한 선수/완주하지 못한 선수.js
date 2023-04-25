@@ -1,11 +1,11 @@
 function solution(participant, completion) {
-    let parArr = participant.sort();
-    let comArr = completion.sort();
-    // console.log(parArr);
-    // console.log(comArr);
+    participant.sort();
+    completion.sort();
+    // console.log(participant);
+    // console.log(completion);
     
-    for(let i=0; i<parArr.length; i++){
-        if(parArr[i] !== comArr[i])
-            return parArr[i];
+    for(let i=0; i<participant.length; i++){
+        if(participant[i] !== completion[i])
+            return participant[i];
     }
 }
