@@ -4,8 +4,8 @@ function solution(participant, completion) {
     // console.log(participant);
     // console.log(completion);
     
-    for(let i=0; i<participant.length; i++){
-        if(participant[i] !== completion[i])
+    for(let i in participant) {
+        if(participant[i] !== completion[i]) 
             return participant[i];
     }
 }
