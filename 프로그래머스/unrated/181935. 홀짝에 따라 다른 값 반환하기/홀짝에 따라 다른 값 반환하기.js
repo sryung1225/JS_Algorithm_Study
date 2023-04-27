@@ -1,9 +1,9 @@
 function solution(n) {
     let sum = 0;
     if(n % 2 === 1){
-        for(let i=n; i>0; i-=2) sum += i;
+        sum = (n+1)*(n+1)/4;
     } else {
-        for(let i=n; i>0; i-=2) sum += Math.pow(i, 2);
+        sum = n*(n+1)*(n+2)/6;
     }
     return sum;
 }
