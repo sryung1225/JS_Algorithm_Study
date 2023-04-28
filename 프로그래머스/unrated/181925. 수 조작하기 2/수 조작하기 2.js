@@ -1,19 +1,10 @@
 function solution(numLog) {
-    let answer = '';
-    for(let i=0; i<numLog.length; i++){
-        switch(numLog[i+1] - numLog[i]){
-            case 1:
-                answer += "w";
-                break;
-            case -1:
-                answer += "s";
-                break;
-            case 10:
-                answer += "d";
-                break;
-            case -10:
-                answer += "a";
-        }
-    }
+    let answer = numLog.map((v, i) => {
+        if(i === 0) return "";
+        else if(numLog[i-1] + 1 === v) return "w";
+        else if(numLog[i-1] - 1 === v) return "s";
+        else if(numLog[i-1] + 10 === v) return "d";
+        else return "a";
+    }).join("");
     return answer;
 }
