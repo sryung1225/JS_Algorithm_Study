@@ -1,18 +1,9 @@
 function solution(n, control) {
-    for(let i of control){
-        switch(i){
-            case "w":
-                n++;
-                break;
-            case "s":
-                n--;
-                break;
-            case "d":
-                n+=10;
-                break;
-            case "a":
-                n-=10;
-        }   
-    }
-    return n;
+    let answer = [...control].reduce((acc, cur) => {
+        if(cur === "w") return acc+1;
+        else if(cur === "s") return acc-1;
+        else if(cur === "d") return acc+10;
+        else return acc-10;
+    }, n);
+    return answer;
 }
