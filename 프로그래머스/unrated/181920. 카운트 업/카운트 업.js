@@ -1,7 +1,6 @@
 function solution(start, end) {
-    let answer = [];
-    for(let i=start; i<=end; i++){
-        answer.push(i);
-    }
-    return answer;
+    return Array.from(
+        {length: end-start+1}, // 유사배열 - 크기를 지정
+        () => start++
+    );
 }
