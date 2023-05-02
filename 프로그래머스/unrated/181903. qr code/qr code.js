@@ -1,6 +1,7 @@
 function solution(q, r, code) {
-    let answer = '';
-    for(let i=r; i<code.length; i+=q)
-        answer += code[i];
+    let answer = "";
+    [...code].map((v, i) => {
+        if(i % q === r) answer += v;
+    })
     return answer;
 }
