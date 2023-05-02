@@ -1,10 +1,10 @@
 # [unrated] 부분 문자열 이어 붙여 문자열 만들기 - 181911 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181911) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181911?language=javascript) 
 
 ### 성능 요약
 
-메모리: 33.5 MB, 시간: 0.15 ms
+메모리: 33.5 MB, 시간: 0.18 ms
 
 ### 구분
 
