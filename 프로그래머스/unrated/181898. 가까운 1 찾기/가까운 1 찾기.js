@@ -1,7 +1,4 @@
 function solution(arr, idx) {
-    arr = arr.slice(idx);
-    if(arr.indexOf(1) !== -1)
-        return arr.indexOf(1)+idx;
-    else
-        return -1;
+    return arr.indexOf(1, idx);
+    // indexOf의 두번째 인자는 검색을 시작할 인덱스이다 ;_;
 }
