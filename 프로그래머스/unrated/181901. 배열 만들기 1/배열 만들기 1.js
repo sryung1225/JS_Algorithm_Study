@@ -1,7 +1,3 @@
 function solution(n, k) {
-    let answer = [];
-    for(let i=k; i<=n; i+=k){
-        answer.push(i);
-    }
-    return answer;
+    return Array(Math.floor(n/k)).fill(k).map((v,i) => v*(i+1));
 }
