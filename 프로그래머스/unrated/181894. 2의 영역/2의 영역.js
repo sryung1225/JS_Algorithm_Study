@@ -1,10 +1,6 @@
 function solution(arr) {
-    let idx = arr.map((v, i) => v === 2 ? i : -1).filter(v => v !== -1);
-    // console.log(idx)
+    const start = arr.indexOf(2);
+    const end = arr.lastIndexOf(2);
     
-    if(idx.length === 0){
-        return [-1];
-    } else {
-        return arr.slice(idx[0], idx[idx.length-1]+1);
-    }
+    return start === -1 ? [-1] : arr.slice(start, end+1);
 }
