@@ -1,17 +1,7 @@
 function solution(str_list) {
-    const left = str_list.indexOf("l");
-    const right = str_list.indexOf("r");
-    
-    if(right === -1 && left !== -1){ // "l"만 존재
-        return str_list.slice(0, left);
-    } else if(left === -1 && right !== -1){ // "r"만 존재
-        return str_list.slice(right+1);
+    for(let i=0; i<str_list.length; i++) {
+        if (str_list[i] === "l") return str_list.slice(0, i);
+        if (str_list[i] === "r") return str_list.slice(i+1);
     }
-    if(left < right){
-        return str_list.slice(0, left);
-    } else if(left > right) {
-        return str_list.slice(right+1);
-    } else {
-        return [];
-    }
+    return [];
 }
