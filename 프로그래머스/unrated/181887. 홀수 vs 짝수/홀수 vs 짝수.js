@@ -7,5 +7,5 @@ function solution(num_list) {
         else
             oddSum += num_list[i];
     }
-    return evenSum > oddSum ? evenSum : oddSum;
+    return Math.max(evenSum, oddSum);
 }
