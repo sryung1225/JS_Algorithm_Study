@@ -1,7 +1,7 @@
 function solution(arr, queries) {
-    for (let i in queries){
-        let [s, e] = queries[i];
-        for(let i=s; i<=e; i++) arr[i]++;
-    }
+    queries.forEach(([s, e]) => {
+        while(s <= e)
+            arr[s++]++;
+    });
     return arr;
 }
