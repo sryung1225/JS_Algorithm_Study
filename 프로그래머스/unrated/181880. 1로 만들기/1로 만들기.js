@@ -1,13 +1,3 @@
 function solution(num_list) {
-    let answer = 0;
-    num_list.forEach((i) => {
-        while(i > 1){
-            if(i%2 === 0)
-                i = i/2;
-            else
-                i = (i-1)/2;
-            answer++;
-        }
-    });
-    return answer;
+    return num_list.map(v => v.toString(2).length - 1).reduce((acc, cur) => acc + cur);
 }
