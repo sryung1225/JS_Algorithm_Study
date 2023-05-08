@@ -1,3 +1,3 @@
 function solution(myString, pat) {
-    return myString.toLowerCase().split(pat.toLowerCase()).join("").length < myString.length ? 1 : 0;
+    return myString.toLowerCase().includes(pat.toLowerCase()) ? 1 : 0;
 }
