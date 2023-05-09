@@ -1,3 +1,3 @@
 function solution(myString) {
-    return [...myString].map(v => v === "a" ? "A" : v !== "A" && v === v.toUpperCase() ? v.toLowerCase() : v).join("");
+    return [...myString].map(v => ["a", "A"].includes(v) ? "A" : v.toLowerCase()).join("");
 }
