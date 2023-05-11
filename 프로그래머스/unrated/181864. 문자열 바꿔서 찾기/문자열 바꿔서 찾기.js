@@ -1,12 +1,4 @@
 function solution(myString, pat) {
-    let arr = [];
-    for(let i of myString){
-        if(i === "A") 
-            arr.push("B");
-        else if(i === "B") 
-            arr.push("A");
-        if(arr.join("").slice(-pat.length) === pat)
-            return 1;
-    }
-    return 0;
+    let arr = [...myString].map(v => v === "A" ? "B" : "A").join("");
+    return arr.includes(pat) ? 1 : 0;
 }
