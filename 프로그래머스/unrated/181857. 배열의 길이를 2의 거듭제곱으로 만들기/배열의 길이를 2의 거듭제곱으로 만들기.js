@@ -1,7 +1,3 @@
 function solution(arr) {
-    let size = 0;
-    while(arr.length > Math.pow(2, size)){
-        size++;
-    }
-    return new Array(Math.pow(2,size)).fill(0).map((v, i) => arr[i] ?? v);
+    return new Array(2**Math.ceil(Math.log2(arr.length))).fill(0).map((v, i) => arr[i] ?? v);
 }
