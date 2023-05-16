@@ -1,12 +1,22 @@
 function solution(order) {
     let answer = 0;
     order.forEach(v => {
-        if(v.includes("americano"))
-            answer += 4500;
-        else if(v.includes("cafelatte"))
-            answer += 5000;
-        else if(v === "anything")
-            answer += 4500;
+        switch(v){
+            case "iceamericano":
+            case "americanoice":
+            case "hotamericano":
+            case "americanohot":
+            case "americano":
+            case "anything":
+                answer += 4500;
+                break;
+            case "icecafelatte":
+            case "cafelatteice":
+            case "hotcafelatte":
+            case "cafelattehot":
+            case "cafelatte":
+                answer += 5000;
+        }
     })
     return answer;
 }
