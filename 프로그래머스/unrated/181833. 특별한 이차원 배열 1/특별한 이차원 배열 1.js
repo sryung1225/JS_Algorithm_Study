@@ -1,7 +1,6 @@
 function solution(n) {
-    let answer = new Array(n);
+    let answer = Array.from(Array(n), () => Array(n).fill(0));
     for(let i=0; i<n; i++){
-        answer[i] = new Array(n).fill(0);
         answer[i][i] = 1;
     }
     return answer;
