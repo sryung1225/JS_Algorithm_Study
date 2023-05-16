@@ -1,4 +1,3 @@
 function solution(myString) {
-    const asciiL = "l".charCodeAt();
-    return [...myString].map(v => v.charCodeAt() < asciiL ? "l" : v).join("");
+    return [...myString].map(v => v < "l" ? "l" : v).join("");
 }
