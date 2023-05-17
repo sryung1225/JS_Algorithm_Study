@@ -11,7 +11,7 @@
 - 22/12/16 ~
 - 프로그래머스 Level 1 풀이
 - 프로그래머스 고득점 Kit 풀이
-- ![프로그래머스 현재 상태](./assets/status_programmers.png)
+- <img src="./assets/status_programmers.PNG" alt="프로그래머스 현재 상태" width="300">
 - 제주코딩베이스캠프 : JS 100제 2부 풀이
 
 ### 🎒 (메모) 문제 풀이 플랫폼 추천
