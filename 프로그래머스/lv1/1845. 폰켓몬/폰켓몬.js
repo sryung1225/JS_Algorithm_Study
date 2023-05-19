@@ -1,5 +1,4 @@
 function solution(nums) {
-    let array = [...new Set(nums)];
-    if(array.length < nums.length/2) return array.length;
-    else return nums.length/2;
+    let arr = [...new Set(nums)];
+    return arr.length > nums.length/2 ? nums.length/2 : arr.length;
 }
