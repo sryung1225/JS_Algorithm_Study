@@ -1,6 +1,11 @@
 function solution(n) {
-    let arr = [1, 2, 4];
-    return n === 0 
-        ? ""
-        : solution(parseInt((n - 1) / 3)) + arr[(n - 1) % 3];
+    let arr = [4, 1, 2];
+    let size = arr.length;
+    let answer = [];
+    
+    while(n){
+        answer.push(arr[n % 3]);
+        n = Math.floor((n - 1) / size);
+    }
+    return answer.reverse().join("");
 }
