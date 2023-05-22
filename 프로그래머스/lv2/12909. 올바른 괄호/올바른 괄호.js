@@ -1,15 +1,9 @@
 function solution(s){
     let count = 0;
-    for(let i=0; i<s.length; i++){
-        if(s[i] === "(")
-            count++;
-        else if(s[i] === ")")
-            count--;
+    for(let i of s){
+        i === "(" ? count++ : count--;
         if(count < 0)
             return false;
     }
-    if(count === 0)
-        return true;
-    else
-        return false;
+    return count === 0 ? true : false;
 }
