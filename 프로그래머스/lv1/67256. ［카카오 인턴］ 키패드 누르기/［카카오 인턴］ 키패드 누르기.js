@@ -1,3 +1,6 @@
+function diff(a, b) {
+    return Math.abs(a-b)%3 + Math.floor(Math.abs(a-b)/3);
+}
 function solution(numbers, hand) {
     let answer = '';
     let hands = [10, 12];
@@ -10,12 +13,12 @@ function solution(numbers, hand) {
             answer += "R";
             hands[1] = v;
         } else { // v % 3 === 2
-            let diffL = Math.abs(hands[0] - v)%3 + Math.floor(Math.abs(hands[0] - v)/3);
-            let diffR = Math.abs(hands[1] - v)%3 + Math.floor(Math.abs(hands[1] - v)/3);
+            let diffL = diff(hands[0], v);
+            let diffR = diff(hands[1], v);
             if(diffL < diffR || (diffL === diffR && hand === "left")){
                 answer += "L";
                 hands[0] = v;
-            } else if(diffL > diffR || (diffL === diffR && hand === "right")){
+            } else {
                 answer += "R";
                 hands[1] = v;
             }
