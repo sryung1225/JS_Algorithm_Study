@@ -2,13 +2,10 @@ function solution(array) {
     if([...new Set(array)].length === 1)
         return array[0];
     
-    let obj = {};
-    array.forEach(v => {
-        if(!obj[v])
-            obj[v] = 1;
-        else
-            obj[v]++;
-    }) // { '1': 1, '2': 1, '3': 3, '4': 1 }
+    let obj = array.reduce((acc, cur) => ({
+        ...acc,
+        [cur]: (acc[cur] || 0) + 1,
+    }), {}); // { '1': 1, '2': 1, '3': 3, '4': 1 }
 
     let arr = Object.keys(obj).map(v => 
        [+v, obj[v]]
