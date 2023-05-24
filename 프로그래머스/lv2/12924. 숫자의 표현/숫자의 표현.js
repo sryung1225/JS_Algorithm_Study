@@ -1,16 +1,10 @@
 function solution(n) {
-    let answer = 1;
-    for(let a=1; a<=Math.floor(n/2); a++){
-        let b = Math.floor(Math.sqrt(2*n + a*(a-1)));
-        if(b*(b+1) - a*(a-1) === 2*n){
+    // n의 공약수 중 홀수 계산하기
+    let answer = 0;
+    for(let i=1; i<=n; i++){
+        if(n%i === 0 && i%2 === 1){
             answer++;
-            // let map = [];
-            // for(let i=a; i<=b; i++) map.push(i);
-            // console.log(map)
-        }    
+        }
     }
-    // ? [ 1, 2, 3, 4, 5 ]
-    // ? [ 4, 5, 6 ]
-    // ? [ 7, 8 ]
     return answer;
 }
