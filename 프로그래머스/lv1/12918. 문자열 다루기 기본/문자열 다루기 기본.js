@@ -1,14 +1,6 @@
 function solution(s) {
-    return /^\d{6}$|^\d{4}$/.test(s);
+    if(s.length !== 4 && s.length !== 6){
+        return false;
+    }
+    return s.split("").filter(v => !isNaN(+v)).length === s.length ? true : false;
 }
-
-// /^\d{6}$|^\d{4}$/
-// - \d : 숫자
-// - {n} : n개 반복
-// - ^\d{6}$ : 숫자 6개로 시작하고 끝남 (= 숫자 6개로만 구성됨)
-// - | : OR
-// => 숫자 4개로만 이루어져 있거나, 6개로민 이루어져 있거나
-
-// test 메서드
-// - (정규표현식).test("문자열") : "문자열"이 "정규표현식"과의 매칭 유무를 true/false 반환
-// => 문자열이 숫자 4/6개로만 이루어져 있으면 true 반환
