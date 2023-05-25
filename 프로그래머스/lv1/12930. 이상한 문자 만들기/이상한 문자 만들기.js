@@ -1,5 +1,12 @@
 function solution(s) {
-    return s.toUpperCase().replace(/(\w)(\w)/g, function(a){
-        return a[0].toUpperCase()+a[1].toLowerCase();
-    })
+    return s.split(" ").map(v => {
+       v = v.split("").map((k, i) => {
+           if(i % 2 === 0)
+               k = k.toUpperCase();
+           else
+               k = k.toLowerCase();
+           return k;
+       }).join("");
+        return v;
+    }).join(" ");
 }
