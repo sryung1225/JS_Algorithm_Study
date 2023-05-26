@@ -1,8 +1,8 @@
 function solution(citations) {
-    citations.sort((a, b) => a - b);
+    citations.sort((a, b) => b - a);
     let i=0;
-    while(citations[i] < citations.length-i){
+    while(citations[i] >= i+1){
         i++;
     }
-    return citations.length-i;
+    return i;
 }
