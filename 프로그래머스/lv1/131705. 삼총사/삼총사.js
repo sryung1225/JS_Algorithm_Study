@@ -1,12 +1,19 @@
 function solution(number) {
     let answer = 0;
-    for(let i=0; i<number.length-2; i++){
-        for(let j=i+1; j<number.length-1; j++){
-            for(let k=j+1; k<number.length; k++){
-                if(!(number[i] + number[j] + number[k]))
-                    answer++;
+    
+    function dfs(idx, count, sum) {
+        if(idx > number.length)
+            return;
+        if (count === 3){
+            if (sum === 0){
+                answer++;
             }
+            return;
         }
+        dfs(idx+1, count+1, sum+number[idx]);
+        dfs(idx+1, count, sum);
     }
+    
+    dfs(0, 0, 0);
     return answer;
 }
