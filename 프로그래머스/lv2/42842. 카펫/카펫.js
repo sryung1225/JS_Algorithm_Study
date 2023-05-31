@@ -1,8 +1,7 @@
 function solution(brown, yellow) {
-    for(let h=1; h<=brown; h++){
+    for(let h=3; h<=brown; h++){
         let w = Math.floor((brown+yellow)/h);
-        let yellowSize = (h === 0) ? w-2 : (w-2)*(h-2);
-        if(brown === (w*h - yellowSize) && yellow === yellowSize){
+        if(brown === (w*h - (w-2)*(h-2)) && yellow === (w-2)*(h-2)){
             return [w, h];
         }
     }
