@@ -1,11 +1,9 @@
 function solution(n, words) {
-    let answer = [];
-    let stack = [words[0]];
-    for(let i=1; i<words.length; i++){
-        stack.push(words[i]);
-        if(stack[i-1].slice(-1) !== stack[i].slice(0, 1)
-          || stack.indexOf(words[i]) !== i)
-            return [(i%n)+1, Math.ceil((i+1)/n)];
-    }
-    return [0, 0];
+    let answer = 0;
+    words.reduce((acc, cur, i) => {
+        if(acc !== cur[0] || words.slice(0, i).indexOf(cur) !== -1)
+            answer = answer || i;
+        return cur[cur.length-1];
+    }, "");
+    return answer ? [answer%n+1, Math.ceil((answer+1)/n)] : [0, 0];
 }
