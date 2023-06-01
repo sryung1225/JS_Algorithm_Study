@@ -1,9 +1,5 @@
 function solution(n){
-    let count = 1;
-    while(n > 1){
-        if(n % 2 !== 0)
-            count++;
-        n = Math.floor(n/2);
-    }
-    return count;
+    if(n === 1)
+        return 1;
+    return n.toString(2).split("").reduce((a, b) => +a + +b, 0);
 }
