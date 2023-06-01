@@ -1,10 +1,8 @@
 function solution(n,a,b){
-    let answer = 0;
-    while(n>1){
-        answer++;
+    let i = 0;
+    while(Math.ceil(a/Math.pow(2, i)) !== Math.ceil(b/Math.pow(2, i))){
+        i++;
         n /= 2;
-        if(Math.ceil(a/Math.pow(2, answer)) === Math.ceil(b/Math.pow(2, answer)))
-            break;
     }
-    return answer;
+    return i;
 }
