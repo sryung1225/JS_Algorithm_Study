@@ -1,13 +1,10 @@
-function solution(name, yearning, photo) {
-    // 그리워하는 사람들+점수 객체로 생성 
-    let miss = {};
-    name.forEach((v, i) => {
-        miss[v] = yearning[i];
-    })
-    
+function solution(name, yearning, photo) {    
     let answer = [];
     photo.forEach(v => {
-        let sum = v.reduce((acc, cur) => acc + (miss[cur] ? miss[cur] : 0), 0);
+        let sum = v.reduce((acc, cur) => 
+                           acc 
+                           + (name.indexOf(cur) === -1 ? 0 : yearning[name.indexOf(cur)])
+                           , 0);
         answer.push(sum);
     });
     return answer;
