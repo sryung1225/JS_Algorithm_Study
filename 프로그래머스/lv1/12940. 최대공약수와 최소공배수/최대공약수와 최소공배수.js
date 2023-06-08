@@ -1,14 +1,11 @@
-function solution(n, m) {
-    let gcf = 1; // 최대공약수
-    let lcm = 1; // 최소공배수
-    for(let i=Math.min(n, m); i>0; i--){
-        if(n % i === 0 && m % i === 0){
-            gcf = i;
-            break;
-        }
-    }
-    lcm = n * m / gcf;
-    return [gcf, lcm];
+function gcf(n, m) { // 최대공약수
+    return m ? gcf(m, n % m) : n;
 }
 
+function lcm(n, m) { // 최소공배수
+    return n * m / gcf(n, m);
+}
 
+function solution(n, m) {
+    return [gcf(n, m), lcm(n, m)];
+}
