@@ -7,6 +7,8 @@ function solution(n, m) {
             break;
         }
     }
-    lcm = gcf * (n / gcf) * (m / gcf);
+    lcm = n * m / gcf;
     return [gcf, lcm];
 }
+
+
