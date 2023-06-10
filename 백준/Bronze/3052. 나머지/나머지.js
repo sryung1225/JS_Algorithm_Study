@@ -1,5 +1,5 @@
-const input = require("fs").readFileSync("/dev/stdin").toString().trim().split("\n").map(v => +v);
+const input = require("fs").readFileSync("/dev/stdin").toString().trim().split("\n");
 
-let arr = input.map(v => v % 42);
-let answer = new Set(arr).size;
+let arr = input.map(v => +v % 42);
+let answer = [...new Set(arr)].length;
 console.log(answer);
