@@ -1,7 +1,6 @@
 function isGood(s) {
     let stack = [];
     for(let i=0; i<s.length; i++){
-        let idx = 0;
         if((s[i] === "]" && stack[stack.length-1] === "[")
           || (s[i] === ")" && stack[stack.length-1] === "(")
           || (s[i] === "}" && stack[stack.length-1] === "{")){
@@ -16,14 +15,10 @@ function isGood(s) {
 }
 
 function solution(s) {
-    s = [...s];
     let answer = 0;
-    if(isGood(s))
-        answer++;
-    for(let i=1; i<s.length; i++){
-        let tmp = s.shift();
-        s.push(tmp);
-        if(isGood(s))
+    for(let i=0; i<s.length; i++){
+        const rotate = s.slice(i) + s.slice(0, i);
+        if(isGood(rotate))
             answer++;
     } 
     return answer;
