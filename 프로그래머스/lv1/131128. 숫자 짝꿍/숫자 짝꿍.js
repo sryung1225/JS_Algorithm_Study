@@ -1,5 +1,5 @@
 function solution(X, Y) {
-    let common = [];
+    let common = "";
     let countX = {};
     [...X].forEach(v => {
         if(!countX[v])
@@ -10,13 +10,13 @@ function solution(X, Y) {
     [...Y].forEach(v => {
         if(countX[v] > 0){
             countX[v]--;
-            common.push(v);
+            common += v;
         }
     });
-    if(common.length === 0){
+    if(common === "")
         return "-1";
-    } else {
-        let answer = common.sort((a, b) => b - a);
-        return common[0] === "0" ? "0" : answer.join("");
-    }
+    else if (+common === 0)
+        return "0";
+    else
+        return [...common].sort((a, b)=> b - a).join("");
 }
