@@ -7,6 +7,7 @@ function solution(n, m, section) {
             for(let j=i; j<i+m; j++){
                 wall[j]++;
             }
+            i+=m-1;
         }
     }
     return answer;
