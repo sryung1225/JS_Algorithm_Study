@@ -2,11 +2,7 @@ function solution(keymap, targets) {
     // 알파벳을 만들기 위해 키를 누르는 최소 횟수
     let keyObj = {};
     keymap.forEach(w => {
-        for(let i=0; i<w.length; i++){
-            if(!keyObj[w[i]] || keyObj[w[i]] > i+1){
-                keyObj[w[i]] = i+1;
-            }
-        }
+        [...w].map((v, i) => keyObj[v] = (keyObj[v] < i+1 ? keyObj[v] : i+1));
     });
     
     let answer = [];
