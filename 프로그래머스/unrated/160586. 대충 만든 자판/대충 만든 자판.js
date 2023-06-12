@@ -7,16 +7,8 @@ function solution(keymap, targets) {
     
     let answer = [];
     targets.forEach(str => {
-        let touch = 0;
-        for(let i=0; i<str.length; i++){
-            if(keyObj[str[i]]){
-                touch += keyObj[str[i]];
-            } else {
-                touch = -1;
-                break;
-            }
-        }
-        answer.push(touch);
+        let touch = [...str].reduce((acc, cur) => acc + keyObj[cur], 0);
+        answer.push(touch || -1);
     })
     return answer;
 }
