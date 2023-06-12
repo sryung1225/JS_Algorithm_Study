@@ -1,14 +1,13 @@
 function solution(new_id) {
     // 1단계
-    let answer = [...new_id].map(v => v.toLowerCase());
+    let answer = new_id.toLowerCase();
     
     // 2단계
-    // answer = answer.join("").match(/[0-9a-z/-/_/.]/g).join("");
-    answer = answer.filter(v => (
+    answer = [...answer].filter(v => (
         v === "-" || v === "_" || v === "."
         || !isNaN(Number(v))
         || v.toUpperCase() !== v
-    ));
+    )).join("");
     
     // 3단계
     let tmp = 0;
@@ -16,7 +15,7 @@ function solution(new_id) {
         if(answer[i] === ".")
             tmp++;
         else if(answer[i] !== "." && tmp > 0){
-            answer = answer.slice(0, i-tmp+1).concat(answer.slice(i));
+            answer = answer.slice(0, i-tmp+1) + answer.slice(i);
             i -= tmp-1;
             tmp = 0;   
         }
@@ -32,10 +31,8 @@ function solution(new_id) {
         answer = answer.slice(0, answer.length-1);
     
     // 5단계
-    if(answer.length === 0)
+    if(!answer)
         answer = "a";
-    else
-        answer = answer.join("");
     
     // 6단계
     if(answer.length >= 16)
@@ -44,9 +41,8 @@ function solution(new_id) {
         answer = answer.slice(0, answer.length-1);
     
     // 7단계
-    if(answer.length <= 2){
-        while(answer.length < 3)
-            answer += answer[answer.length-1];
-    }
+    if(answer.length <= 2)
+        answer += answer[answer.length-1].repeat(3 - answer.length);
+
     return answer;
 }
