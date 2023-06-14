@@ -1,7 +1,7 @@
 function solution(park, routes) {
-    const [w, h] = [park[0].length, park.length];
+    const dirs = { E: [0, 1], W: [0, -1], S: [1, 0], N: [-1, 0] };
     let [i, j] = [0, 0];
-    for(let x=0; x<h; x++){
+    for(let x=0; x<park.length; x++){
         if(park[x].includes("S")){
             [i, j] = [x, park[x].indexOf("S")];
             break;
@@ -9,33 +9,16 @@ function solution(park, routes) {
     }
     routes.forEach(v => {
         const [dir, dis] = v.split(" ").map(v => isNaN(+v) ? v : +v);
+        let [ni, nj] = [i, j];
         let step = 0;
-        if(dir === "E"){
-            while(step+1 <= dis && j+step+1 < w && park[i][j+step+1] !== "X"){
-                step++;
-                if(j+step === j+dis)
-                    j += dis;
-            }
-        } else if(dir === "W"){
-            while(step+1 <= dis && j-(step+1) >= 0 && park[i][j-(step+1)] !== "X"){
-                step++;
-                if(j-step === j-dis)
-                    j -= dis;
-            }
-        } else if(dir === "N"){
-            while(step+1 <= dis && i-(step+1) >= 0 && park[i-(step+1)][j] !== "X"){
-                step++;
-                if(i-step === i-dis)
-                    i -= dis;
-            }
-        } else if(dir === "S"){
-            while(step+1 <= dis && i+step+1 < h && park[i+step+1][j] !== "X"){
-                step++;
-                if(i+step === i+dis)
-                    i += dis;
-            }
+        while(step < dis){
+            [ni, nj] = [ni+dirs[dir][0], nj+dirs[dir][1]];
+            if(!park[ni] || !park[ni][nj] || park[ni][nj] === "X")
+                break;
+            step++;
+            if(step === dis)
+                [i, j] = [ni, nj];
         }
-        // console.log(dis, dis, "/", [i, j])
     })
     return [i, j];
 }
