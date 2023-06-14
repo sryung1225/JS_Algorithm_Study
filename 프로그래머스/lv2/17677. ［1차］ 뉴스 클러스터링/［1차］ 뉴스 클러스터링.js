@@ -12,7 +12,7 @@ function cutWord(str) {
 
 function solution(str1, str2) {
     let answer = 0;
-    let arr1 = cutWord(str1);
+    const arr1 = cutWord(str1);
     let arr2 = cutWord(str2);
     
     let max = arr1.length+arr2.length;
@@ -26,5 +26,5 @@ function solution(str1, str2) {
             arr2 = arr2.slice(0, idx).concat(arr2.slice(idx+1));
         }
     })
-    return Math.floor((hab/(max-hab))*65536);
+    return Math.floor(hab/(max-hab)*65536);
 }
