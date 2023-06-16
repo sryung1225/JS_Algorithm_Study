@@ -1,6 +1,5 @@
 function solution(s) {
-    let s2 = s.slice(2,s.length-2).split("},{");
-    let ele = s2.map(v => v.split(","));
+    let ele = JSON.parse(s.replace(/{/g, '[').replace(/}/g, ']'));
     ele.sort((a, b) => a.length - b.length);
     
     let answer = [];
