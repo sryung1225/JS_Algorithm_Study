@@ -1,10 +1,6 @@
 function solution(s) {
-    let ele = [];
-    let s2 = s.slice(1,s.length-2).split("},");
-    s2.forEach(v => {
-        let item = v.slice(1).split(",");
-        ele.push(item)
-    })
+    let s2 = s.slice(2,s.length-2).split("},{");
+    let ele = s2.map(v => v.split(","));
     ele.sort((a, b) => a.length - b.length);
     
     let answer = [];
