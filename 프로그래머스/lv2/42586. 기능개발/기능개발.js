@@ -1,19 +1,14 @@
 function solution(progresses, speeds) {
-    let answer = [];
+    let answer = [0];
     let days = progresses.map((v, i) => Math.ceil((100 - v)/speeds[i]));
     let maxDay = days[0];
-    let works = 0;
-    for(let i=0; i<progresses.length; i++){
+    for(let i=0, j=0; i<progresses.length; i++){
         if(days[i] <= maxDay){
-            works++;
+            answer[j]++;
         } else {
             maxDay = days[i];
-            answer.push(works);
-            works = 0;
-            i--;
+            answer[++j] = 1;
         }
     }
-    if(works)
-        answer.push(works);
     return answer;
 }
