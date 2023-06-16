@@ -6,9 +6,8 @@ function solution(s) {
     let answer = [];
     ele.forEach(arr => {
         arr.forEach(v => {
-            if(!answer.includes(+v))
-                answer.push(+v);
+            answer.push(+v);
         })
     })
-    return answer;
+    return [...new Set(answer)];
 }
