@@ -1,16 +1,18 @@
 function solution(cacheSize, cities) {
+    const MISS = 5;
+    const HIT = 1;
     let cache = [];
     let answer = 0;
     cities.forEach(city => {
         city = city.toUpperCase();
-        if(!cache.includes(city)){
+        let idx = cache.indexOf(city);
+        if(idx === -1){
             cache.unshift(city);
-            answer += 5;
+            answer += MISS;
         } else {
-            let idx = cache.indexOf(city);
             cache = cache.slice(0, idx).concat(cache.slice(idx+1));
             cache.unshift(city);
-            answer += 1;
+            answer += HIT;
         }
         if(cache.length > cacheSize)
             cache.pop();
