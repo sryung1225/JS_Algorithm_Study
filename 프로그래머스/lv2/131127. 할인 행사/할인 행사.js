@@ -1,30 +1,16 @@
-function solution(want, number, discount) {
-    const wantObj = {};
-    want.forEach((v, i) => {
-        wantObj[v] = number[i];
-    })
-    
+function solution(want, number, discount) {    
     let answer = 0;
     for(let i=0; i<=discount.length-10; i++){
-        const dis = discount.slice(i, i+10);
-        const disObj = {};
-        dis.forEach(v => {
-            if(!disObj[v]){
-                disObj[v] = 1;
-            } else {
-                disObj[v]++;
-            }
-        })
-        
-        let check = 0;
-        for(let item in wantObj){
-            if(!disObj[item] || wantObj[item] > disObj[item]){
+        let dis = discount.slice(i, i+10);
+        let check = true;
+        for(let j=0; j<want.length; j++){
+            let count = dis.filter(v => v === want[j]).length;
+            if(count < number[j]){
+                check = false;
                 break;
-            } else {
-                check++;
             }
         }
-        if(check === want.length){
+        if(check){
             answer++;
         }
     }
