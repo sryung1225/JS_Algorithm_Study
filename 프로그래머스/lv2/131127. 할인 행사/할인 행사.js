@@ -1,9 +1,6 @@
 function solution(want, number, discount) {
     const wantObj = {};
     want.forEach((v, i) => {
-        if(!discount.includes(v)){
-            return 0;
-        }
         wantObj[v] = number[i];
     })
     
