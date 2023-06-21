@@ -1,19 +1,18 @@
 function solution(arr) {
-    let user = {}; // uid: name
+    const user = {}; // uid: name
+    const stateSentense = {
+        "Enter": "님이 들어왔습니다.",
+        "Leave": "님이 나갔습니다."
+    };
     let answer = [];
-    arr.forEach((v, i) => {
+    arr.forEach(v => {
         v = v.split(" ");
         if(v[2]){
             user[v[1]] = v[2];
         }
-    })
-    arr.forEach(v => {
-        v = v.split(" ");
-        if(v[0] === "Enter"){
-            answer.push(`${user[v[1]]}님이 들어왔습니다.`);
-        } else if(v[0] === "Leave"){
-            answer.push(`${user[v[1]]}님이 나갔습니다.`);
+        if(v[0] === "Enter" || v[0] === "Leave"){
+            answer.push(v.slice(0, 2));
         }
     })
-    return answer;
+    return answer.map(v => user[v[1]] + stateSentense[v[0]]);
 }
