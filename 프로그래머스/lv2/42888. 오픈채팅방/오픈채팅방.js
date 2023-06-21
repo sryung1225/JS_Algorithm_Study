@@ -3,7 +3,7 @@ function solution(arr) {
     let answer = [];
     arr.forEach((v, i) => {
         v = v.split(" ");
-        if(!user[v[1]] || v[2]){
+        if(v[2]){
             user[v[1]] = v[2];
         }
     })
