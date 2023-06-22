@@ -34,16 +34,11 @@ function solution(m, musicinfos) {
     })
     
     // 기억한 멜로디와 일치하는 악보가 있는지 검색 (배열로 저장)
-    let answer = Object.keys(plays).filter(key => {
-        const play = plays[key];
-        const playLength = play.length;
-        for (let i = 0; i <= playLength - mArr.length; i++) {
-          if (play.slice(i, i + mArr.length).join("") === mArr.join("")) {
-            return true;
-          }
-        }
-        return false;
-    });
+    let answer = Object.keys(plays).filter(
+        key => plays[key].filter(
+            (v, idx) => plays[key].slice(idx, idx+mArr.length).join("") === m
+        ).length > 0
+    );
     
     if(answer.length === 1){
         return answer[0].split("_")[0];
