@@ -1,14 +1,19 @@
-function solution(m, musicinfos) {
-    let mArr = []; // 기억한 멜로디 배열화
-    for(let i=0; i<m.length; i++){
-        if(m[i+1] === "#"){
-            mArr.push(m[i]+"#");
+function sliceSound(str) {
+    // 멜로디(문장) => 음(배열) : #을 구분하기 위한 수단
+    let arr = [];
+    for(let i=0; i<str.length; i++){
+        if(str[i+1] === "#"){
+            arr.push(str[i]+"#");
             i++;
         } else {
-            mArr.push(m[i]);
+            arr.push(str[i]);
         }
     }
-    
+    return arr;
+}
+function solution(m, musicinfos) {
+    let mArr = sliceSound(m);
+
     const plays = {}; // 실제 재생한 음악 객체
     
     // 방송된 곡들의 정보 확인
@@ -16,16 +21,8 @@ function solution(m, musicinfos) {
         v = v.split(",");
         let [start, end, title, music] = v;
         let time = (end.slice(0, 2) - start.slice(0, 2))*60 + (end.slice(3) - start.slice(3)); // 재생 시간
+        let musicArr = sliceSound(music);
         
-        let musicArr = []; // 악보
-        for(let i=0; i<music.length; i++){
-            if(music[i+1] === "#"){
-                musicArr.push(music[i]+"#");
-                i++;
-            } else {
-                musicArr.push(music[i]);
-            }
-        }
         let play = []; // 실제 재생한 악보
         for(let i=0; i<time; i++){
             play.push(musicArr[i % musicArr.length]);
