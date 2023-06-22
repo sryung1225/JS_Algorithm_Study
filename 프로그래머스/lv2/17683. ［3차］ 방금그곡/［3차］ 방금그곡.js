@@ -20,7 +20,7 @@ function solution(m, musicinfos) {
     musicinfos.forEach(v => {
         v = v.split(",");
         let [start, end, title, music] = v;
-        let time = (end.slice(0, 2) - start.slice(0, 2))*60 + (end.slice(3) - start.slice(3)); // 재생 시간
+        let time = (new Date(`1970-01-01 ${end}:00`)-new Date(`1970-01-01 ${start}:00`))/60000; // 재생 시간
         let musicArr = sliceSound(music);
         
         let play = []; // 실제 재생한 악보
