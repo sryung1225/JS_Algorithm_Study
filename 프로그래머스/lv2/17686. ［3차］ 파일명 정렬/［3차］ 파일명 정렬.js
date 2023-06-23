@@ -15,10 +15,8 @@ function solution(files) {
         filesDiv.push([head, +number, idx]);
     })
     filesDiv.sort((a, b) => {
-        if(a[0] > b[0])
-            return 1;
-        else if(a[0] < b[0])
-            return -1;
+        if(a[0] !== b[0])
+            return a[0].localeCompare(b[0]);
         else if(a[1] !== b[1])
             return a[1] - b[1];
         else
