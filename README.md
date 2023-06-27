@@ -30,3 +30,15 @@
 ## 💡 풀이 저장
 
 > 상세 풀이와 다른 풀이에 대한 추가 공부는 [Notion](https://eve1225.notion.site/7d0a802bb0da46fda1dec663bd41efb9?v=4bda3b722aab427d90e1a3fcc6facf2c) 을 통해서 정리하고 있습니다.
+
+<br>
+
+---
+
+## 🍞 (비고) MySQL 문제 풀이
+
+DB 복습용으로 가볍게 MySQL 문제를 풀이합니다.
+
+- 프로그래머스 Level 1~4 MySQL 문제 풀이
+- 레포 : [MySQL 폴더](/MYSQL/)
+- 풀이 저장 : [Notion](https://eve1225.notion.site/cafc95712c5841da864bbf1d14dba3f8?v=6869536f9af44da7b917a6d77374e9d0&pvs=4)
