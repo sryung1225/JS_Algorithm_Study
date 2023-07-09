@@ -7,10 +7,8 @@ solution(n);
 
 function solution(n) {
   let answer = 0;
-  for (let i = 1; i <= n; i++) {
-    if (i % 5 === 0) answer++;
-    if (i % (5 * 5) === 0) answer++;
-    if (i % (5 * 5 * 5) === 0) answer++;
+  for (let i = 5; i <= n; i *= 5) {
+    answer += parseInt(n / i);
   }
   console.log(answer);
 }
