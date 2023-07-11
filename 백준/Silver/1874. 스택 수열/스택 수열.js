@@ -23,12 +23,11 @@ function solution(n, inputArr) {
       answer += "+ ";
     }
     let poped = stack.pop();
-    answer += "- ";
-
     if (poped !== num) {
       answer = "NO";
       break;
     }
+    answer += "- ";
   }
   console.log(answer.split(" ").join("\n"));
 }
