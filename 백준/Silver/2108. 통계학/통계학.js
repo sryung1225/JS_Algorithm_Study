@@ -27,20 +27,13 @@ function solution(n, inputArr) {
     if (!obj[v]) obj[v] = 1;
     else obj[v]++;
   });
-  let sorted = Object.keys(obj).sort((a, b) => obj[b] - obj[a]);
-  if (obj[sorted[0]] !== obj[sorted[1]]) {
-    frq = +sorted[0];
+  let sorted = Object.entries(obj).sort((a, b) => {
+    return b[1] - a[1] || a[0] - b[0];
+  });
+  if (sorted[0][1] !== sorted[1]?.[1]) {
+    frq = +sorted[0][0];
   } else {
-    const tmp = [+sorted[0]];
-    for (let i = 1; i < sorted.length; i++) {
-      if (obj[sorted[i]] === obj[sorted[0]]) {
-        tmp.push(+sorted[i]);
-      } else {
-        break;
-      }
-    }
-    tmp.sort((a, b) => a - b);
-    frq = tmp[1];
+    frq = +sorted[1][0];
   }
   answer.push(frq);
 
