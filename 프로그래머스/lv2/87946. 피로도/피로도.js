@@ -2,7 +2,7 @@ function solution(k, dungeons) {
     let answer = 0;
     
     // 탐험한 던전을 체크하기 위한 배열 초기화
-    const check = Array.from({ length: dungeons.length }, _ => 0);
+    const check = Array(dungeons.length ).fill(false);
 
     // 2. 재귀함수를 이용해 완전탐색(DFS:깊이우선탐색) 진행
     function dfs(currentHp, depth){
@@ -14,9 +14,9 @@ function solution(k, dungeons) {
             const [minHp, useHp] = dungeons[i];
             // 현재 피로도 확인 후 던전 탐색
             if(!check[i] && currentHp >= minHp) {
-                check[i] = 1; // 던전 탐험 표시
+                check[i] = true; // 던전 탐험 표시
                 dfs(currentHp-useHp, depth+1); // 다음 던전으로 이동 : 탐험 횟수, 남은 피로도 업데이트
-                check[i] = 0; // 던전 탐험 완료 표시 : 원복
+                check[i] = false; // 던전 탐험 완료 표시 : 원복
             }
         }
     }
