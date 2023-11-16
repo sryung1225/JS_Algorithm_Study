@@ -11,9 +11,8 @@ function solution(N, input) {
   times.sort((a, b) => a - b);
 
   let answer = 0;
-  times.forEach((_, index) => {
-    const arr = times.slice(0, index + 1);
-    answer += arr.reduce((acc, cur) => acc + cur, 0);
+  times.forEach((time, index) => {
+    answer += time * (N - index);
   });
   console.log(answer);
 }
