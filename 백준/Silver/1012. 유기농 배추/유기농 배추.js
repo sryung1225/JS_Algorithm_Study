@@ -8,19 +8,21 @@ solution(T, input);
 // ------------------------------------------------------------------
 
 function exploreNearField(i, j, array, M, N) {
-  array[i][j] = 0;
-  if (i - 1 >= 0 && array[i - 1][j] === 1) {
-    exploreNearField(i - 1, j, array, M, N);
+  let newArray = [...array];
+  newArray[i][j] = 0;
+  if (i - 1 >= 0 && newArray[i - 1][j] === 1) {
+    newArray = exploreNearField(i - 1, j, newArray, M, N);
   }
-  if (i + 1 < M && array[i + 1][j] === 1) {
-    exploreNearField(i + 1, j, array, M, N);
+  if (i + 1 < M && newArray[i + 1][j] === 1) {
+    newArray = exploreNearField(i + 1, j, newArray, M, N);
   }
-  if (j - 1 >= 0 && array[i][j - 1] === 1) {
-    exploreNearField(i, j - 1, array, M, N);
+  if (j - 1 >= 0 && newArray[i][j - 1] === 1) {
+    newArray = exploreNearField(i, j - 1, newArray, M, N);
   }
-  if (j + 1 < N && array[i][j + 1] === 1) {
-    exploreNearField(i, j + 1, array, M, N);
+  if (j + 1 < N && newArray[i][j + 1] === 1) {
+    newArray = exploreNearField(i, j + 1, newArray, M, N);
   }
+  return newArray;
 }
 
 function exploreField(M, N, K, cases) {
@@ -37,7 +39,7 @@ function exploreField(M, N, K, cases) {
     for (let j = 0; j < N; j++) {
       if (array[i][j] === 1) {
         earthworm++;
-        exploreNearField(i, j, array, M, N);
+        array = exploreNearField(i, j, array, M, N);
       }
     }
   }
