@@ -10,9 +10,9 @@
 
 - 22/12/16 ~
 - 프로그래머스 Level 2 풀이
-- 프로그래머스 고득점 Kit 풀이
+- 프로그래머스 고득점 Kit & 레벨2 풀이
 - <img src="./assets/status_programmers.PNG" alt="프로그래머스 순위" width="300">
-- 백준 브론즈 & 실버 풀이
+- 백준 실버 & 골드 풀이
 - <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=sryung1225" alt="백준 티어" width="300">
 - 제주코딩베이스캠프 : JS 100제 2부 풀이
 
