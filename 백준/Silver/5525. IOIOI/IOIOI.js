@@ -8,13 +8,18 @@ solution(input);
 
 function solution(input) {
   const [N, M, S] = input.map((v) => (isNaN(+v) ? v : parseInt(v, 10)));
-  const P = "I" + "OI".repeat(N);
-
+  let pattern = 0; // 현재 연속된 "IOI" 개수를 추적
   let answer = 0;
-  for (let j = 0; j <= M - P.length; j++) {
-    const tmp = S.slice(j, j + P.length);
-    if (tmp === P) {
-      answer++;
+  for (let i = 0; i < M - 2; i++) {
+    if (S.slice(i, i + 3) === "IOI") {
+      pattern++;
+      if (pattern === N) {
+        answer++;
+        pattern--;
+      }
+      i++;
+    } else {
+      pattern = 0;
     }
   }
   console.log(answer);
