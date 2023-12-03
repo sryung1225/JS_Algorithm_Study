@@ -17,6 +17,3 @@ function solution(bandage, health, attacks) {
     }
     return answer;
 }
-
-
-// t x y
