@@ -1,4 +1,5 @@
 function solution(friends, gifts) {
+    // 선물 지수 객체 giftDegree
     const giftDegree = {};
     friends.forEach(v => {
         if(!giftDegree[v]) {
@@ -11,12 +12,14 @@ function solution(friends, gifts) {
         giftDegree[v[1]] -= 1;
     })
     
-    // 다음 달 선물 받는 갯수
+    // 다음 달 선물 받는 갯수를 저장하는 객체 nextGift
     const nextGift = {};
     friends.forEach(v => {
         nextGift[v] = 0;
     })
     
+    // 선물을 주고받은 기록을 순환하며 다음 달 선물 증정
+    // 모든 친구 관계를 순환. 같은 관계 내 다중 선물 교환 기록은 제 때 제거하며 반복 방지
     let giftsArr = [...gifts];
     for(let i=0; i<friends.length; i++){
         for(let j=i+1; j<friends.length; j++){
@@ -47,9 +50,7 @@ function solution(friends, gifts) {
         }
     }
     
+    // 다음달에 가장 많은 선물을 받는 친구
     const answer = Math.max(...Object.values(nextGift));
     return answer;
 }
-
-
-
