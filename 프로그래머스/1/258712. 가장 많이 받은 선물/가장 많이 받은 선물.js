@@ -18,8 +18,7 @@ function solution(friends, gifts) {
         nextGift[v] = 0;
     })
     
-    // 선물을 주고받은 기록을 순환하며 다음 달 선물 증정
-    // 모든 친구 관계를 순환. 같은 관계 내 다중 선물 교환 기록은 제 때 제거하며 반복 방지
+    // 모든 친구관계를 순환. 선물을 주고받은 기록을 확인하며 다음 달 선물 증정
     let giftsArr = [...gifts];
     for(let i=0; i<friends.length; i++){
         for(let j=i+1; j<friends.length; j++){
@@ -30,12 +29,8 @@ function solution(friends, gifts) {
             for(let k=0; k<giftsArr.length; k++){
                 if(giftsArr[k] === str){
                     count++;
-                    giftsArr.splice(k, 1);
-                    k--;
                 } else if(giftsArr[k] === revStr){
                     count--;
-                    giftsArr.splice(k, 1);
-                    k--;
                 }
             }
             if(count > 0){
