@@ -1,11 +1,6 @@
 function solution(friends, gifts) {
     // 선물 지수 객체 giftDegree
-    const giftDegree = {};
-    friends.forEach(v => {
-        if(!giftDegree[v]) {
-            giftDegree[v] = 0;
-        }
-    })
+    const giftDegree = Object.fromEntries(friends.map(v => [v, 0]));
     const arrayGifts = [...gifts].map(v => v.split(" "));
     arrayGifts.forEach(v => {
         giftDegree[v[0]] += 1;
@@ -13,10 +8,7 @@ function solution(friends, gifts) {
     })
     
     // 다음 달 선물 받는 갯수를 저장하는 객체 nextGift
-    const nextGift = {};
-    friends.forEach(v => {
-        nextGift[v] = 0;
-    })
+    const nextGift = Object.fromEntries(friends.map(v => [v, 0]));
     
     // 모든 친구관계를 순환. 선물을 주고받은 기록을 확인하며 다음 달 선물 증정
     let giftsArr = [...gifts];
