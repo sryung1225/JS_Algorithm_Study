@@ -2,11 +2,11 @@ const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "run/input.txt";
 const input = fs.readFileSync(filePath).toString().trim().split("\n");
 const N = Number(input.shift());
-const virus = Number(input.shift());
+const M = Number(input.shift());
 
-console.log(solution(N, virus, input));
+console.log(solution(N, input));
 
-function solution(N, virus, input) {
+function solution(N, input) {
   const graph = {};
   input.forEach((line) => {
     const [a, b] = line.split(" ").map(Number);
@@ -19,15 +19,14 @@ function solution(N, virus, input) {
   const visited = new Array(N + 1).fill(false);
   function dfs(node) {
     visited[node] = true;
-    if (!graph[node]) return;
-    graph[node].forEach((neighbour) => {
-      if (!visited[neighbour]) {
-        dfs(neighbour);
+    graph[node]?.forEach((neighbor) => {
+      if (!visited[neighbor]) {
+        dfs(neighbor);
       }
     });
   }
   dfs(1);
 
-  const answer = visited.filter((v) => v === true).length - 1;
+  const answer = visited.reduce((acc, cur) => (cur ? acc + cur : acc), -1);
   return answer;
 }
