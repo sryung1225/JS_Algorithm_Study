@@ -11,21 +11,15 @@ console.log(solution(N, input));
 
 function solution(N, input) {
   // 회의 정렬
-  const graph = [...input].map((v) => v.split(" ").map(Number));
-  graph.sort((a, b) => {
-    if (a[1] !== b[1]) {
-      return a[1] - b[1];
-    } else {
-      return a[0] - b[0];
-    }
-  }); // 회의 종료시간 asc + 회의 시작시간 asc
+  const graph = [...input]
+    .map((v) => v.split(" ").map(Number))
+    .sort((a, b) => a[1] - b[1] || a[0] - b[0]); // 회의 종료시간 asc + 회의 시작시간 asc
 
   // 정렬된 회의를 방문하며 최적의 회의 선택
   const answer = [graph[0]];
   for (let i = 1; i < N; i++) {
     const current = answer[answer.length - 1][1];
-    if (current > graph[i][0]) continue;
-    else {
+    if (current <= graph[i][0]) {
       answer.push(graph[i]);
     }
   }
