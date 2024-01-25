@@ -10,9 +10,9 @@ let answer = "";
 for (let i = 0; i < input.length; i++) {
   let char = input[i].charCodeAt();
   if (char >= 65 && char <= 90) {
-    answer += String.fromCharCode(char + 13 > 90 ? char - 13 : char + 13);
+    answer += String.fromCharCode(((char - 65 + 13) % 26) + 65);
   } else if (char >= 97 && char <= 122) {
-    answer += String.fromCharCode(char + 13 > 122 ? char - 13 : char + 13);
+    answer += String.fromCharCode(((char - 97 + 13) % 26) + 97);
   } else {
     answer += input[i];
   }
