@@ -6,7 +6,7 @@ const input = fs
   .trim()
   .split("\n")
   .map(Number);
-const N = input.shift();
+input.shift();
 
 // ------------------------------------------------------------------
 
@@ -15,14 +15,14 @@ function tri(n) {
 }
 
 function solution(K) {
-  let numArr = [];
+  const arrK = [];
   for (let i = 1; tri(i) <= K; i++) {
-    numArr.push(tri(i));
+    arrK.push(tri(i));
   }
-  for (let i = 0; i < numArr.length; i++) {
-    for (let j = 0; j < numArr.length; j++) {
-      for (let k = 0; k < numArr.length; k++) {
-        if (numArr[i] + numArr[j] + numArr[k] === K) {
+  for (let i = 0; i < arrK.length; i++) {
+    for (let j = 0; j < arrK.length; j++) {
+      for (let k = 0; k < arrK.length; k++) {
+        if (arrK[i] + arrK[j] + arrK[k] === K) {
           return 1;
         }
       }
