@@ -31,6 +31,8 @@ function solution(K) {
   return 0;
 }
 
+const answer = [];
 input.forEach((num) => {
-  console.log(solution(num));
+  answer.push(solution(num));
 });
+console.log(answer.join("\n"));
