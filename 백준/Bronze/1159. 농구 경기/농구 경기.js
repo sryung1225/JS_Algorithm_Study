@@ -19,5 +19,4 @@ Object.values(names).forEach((arr) => {
     answer.push(arr[0][0]);
   }
 });
-answer.sort();
-console.log(answer.length !== 0 ? answer.join("") : "PREDAJA");
+console.log(answer.length !== 0 ? answer.sort().join("") : "PREDAJA");
