@@ -1,8 +1,7 @@
-function solution(a, b){
-    const 요일 = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-    const 일수 = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    
-    let days = (a === 1 ? 0 : 일수.slice(0, a-1).reduce((acc, cur) => acc + cur, 0)) + b;
-    
-    return 요일[(days + 4) % 7];
+function solution(a, b) {
+    const day = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+    const days = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    let sum = days.slice(0, a).reduce((acc, cur) => acc + cur, 0) + b;
+    let answer = day[(sum + 4) % 7];
+    return answer;
 }
