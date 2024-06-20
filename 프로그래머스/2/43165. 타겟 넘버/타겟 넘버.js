@@ -1,15 +1,12 @@
 function solution(numbers, target) {
     let answer = 0;
-    const size = numbers.length;
     
-    function dfs(count, sum) {
-        if(count < size) {
-            dfs(count + 1, sum + numbers[count]);
-            dfs(count + 1, sum - numbers[count]);
+    function dfs(index, sum){
+        if(index < numbers.length) {
+            dfs(index + 1, sum + numbers[index]);
+            dfs(index + 1, sum - numbers[index]);
         } else {
-            if(sum === target) {
-                answer++;
-            }
+            if(sum === target) answer++;
         }
     }
     
