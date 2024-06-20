@@ -13,10 +13,17 @@ function solution(n, k) {
     const arr = num.split("0").map(Number);
     
     let answer = 0;
+    const memo = {};
     
     arr.forEach((p) => {
         if(p === '') return;
-        if(isPrime(p)) answer++;
+        if(memo[p] === undefined) {
+            const check = isPrime(p);
+            memo[p] = check;
+            if(check) answer++;
+        } else {
+            if(memo[p]) answer++;
+        }
     });
     
     return answer;
