@@ -1,24 +1,25 @@
 function solution(msg) {
-    const wiki = "_ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""); // 27번부터 신규 추가
+    const dic = "_ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""); // 27번부터 신규 추가
     const answer = [];
+    
     for(let i=0; i<msg.length; i++){
-        let w = msg[i];
-        let num = wiki.indexOf(w);
-        let check = true;
+        let word = msg[i];
+        let num = dic.indexOf(word);
         let next = 0;
-        while(check) {
-            let has = wiki.indexOf(w);
-            if(has === -1) {
-                check = false;
-                wiki.push(w);
+        let moreCheck = true;
+        while(moreCheck) {
+            let hasWord = dic.indexOf(word); // dic에 word 있나요?
+            if(hasWord === -1) { // 없어요! => 탐색 종료
+                moreCheck = false;
+                dic.push(word);
                 i += next - 1;
-            } else {
-                num = has;
+            } else { // 있어요! => 다음 탐색 준비
+                num = hasWord;
                 next++;
-                w += msg[i+next];
+                word += msg[i + next];
             }
         }
         answer.push(num); 
     }
     return answer;
-}
+  }
