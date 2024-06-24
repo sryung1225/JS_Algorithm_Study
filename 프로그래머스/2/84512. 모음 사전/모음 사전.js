@@ -2,20 +2,20 @@ function solution(word) {
     const alpha = "AEIOU";
     const size = alpha.length;
     
-    const weights = [];
-    let weight = 0;
-    for (let i=0; i<size; i++) {
-        weight = weight * size + 1;
-        weights.push(weight);
-    }
-    weights.reverse(); // [781, 156, 31, 6, 1]
+    let idx = 0;
+    let dict = {};
     
-    let answer = 0;
-    
-    for (let i=0; i < word.length; i++) {
-        const idx = alpha.indexOf(word[i]);
-        answer += idx * weights[i] + 1;
+    // DFS를 활용하여 사전 만들기
+    function dfs(now, cnt) {
+        if(cnt > size) return;
+        dict[now] = idx++; // 현재 단어와 그 인덱스 저장
+        for(let i=0; i<size; i++){ // 각 알파벳을 추가하여 새로운 단어 생성
+            let next = now + alpha[i];
+            dfs(next, cnt + 1); // 재귀를 이용하여 다음 단어 생성
+        }
     }
     
-    return answer;
+    dfs("", 0);
+    
+    return dict[word];
 }
