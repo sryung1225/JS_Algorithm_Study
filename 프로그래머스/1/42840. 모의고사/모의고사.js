@@ -3,11 +3,9 @@ function solution(answers) {
     let scores = new Array(students.length).fill(0);
     
     students.forEach((student, studentIndex) => {
-        answers.forEach((answer, index) => {
-            if(answer == student[index % student.length]){
-                scores[studentIndex]++;
-            }          
-        })
+        scores[studentIndex] = answers.filter(
+            (answer, index) => answer == student[index % student.length]
+        ).length;
     })
     
     const highScore = Math.max(...scores);
