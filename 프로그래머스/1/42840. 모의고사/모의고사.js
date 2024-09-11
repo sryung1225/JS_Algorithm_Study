@@ -1,18 +1,21 @@
 function solution(answers) {
-    const students = [[1, 2, 3, 4, 5], [2, 1, 2, 3, 2, 4, 2, 5], [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]];
-    const scores = [0, 0, 0];
+    const students = ['12345', '21232425', '3311224455']
+    let scores = new Array(students.length).fill(0);
     
-    answers.forEach((answer, index) => {
-        for(let i=0; i<3; i++){
-            if(students[i][index % students[i].length] === answer) scores[i]++;
-        }
+    students.forEach((student, studentIndex) => {
+        answers.forEach((answer, index) => {
+            if(answer == student[index % student.length]){
+                scores[studentIndex]++;
+            }          
+        })
     })
     
-    const max = Math.max(...scores);
-    let answer = [];
+    const highScore = Math.max(...scores);
+    
+    const answer = [];
     scores.forEach((score, index) => {
-        if(score === max) answer.push(index+1);
+        if(score === highScore)
+            answer.push(index+1);
     })
-    answer.sort((a, b) => a - b);
     return answer;
 }
