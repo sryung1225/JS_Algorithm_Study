@@ -1,22 +1,14 @@
-function move(pos, dir) {
-    let newPos = [...pos];
+function move(x, y, dir) {
     switch(dir) {
         case "U":
-            newPos[1]++;
-            break;
+            return [x, y+1];
         case "D":
-            newPos[1]--;
-            break;
+            return [x, y-1];
         case "R":
-            newPos[0]++;
-            break;
+            return [x+1, y];
         case "L":
-            newPos[0]--;
-            break;
-        default:
-            return;       
+            return [x-1, y];
     }
-    return newPos;
 }
 
 function solution(dirs) {
@@ -25,16 +17,15 @@ function solution(dirs) {
     const routes = new Set();
     
     dirs.split("").forEach((dir) => {
-        const newPos = move(pos, dir);
+        const newPos = move(...pos, dir);
         if(newPos[0] > limit || newPos[0] < -limit || newPos[1] > limit || newPos[1] < -limit) return;
-        const route = `(${pos[0]}, ${pos[1]}) -> (${newPos[0]}, ${newPos[1]})`;
-        const reverseRoute = `(${newPos[0]}, ${newPos[1]}) -> (${pos[0]}, ${pos[1]})`;
-        if(!routes.has(reverseRoute)){
-            routes.add(route);
-        }
+        const route = `(${pos[0]}, ${pos[1]}) - (${newPos[0]}, ${newPos[1]})`;
+        const reverseRoute = `(${newPos[0]}, ${newPos[1]}) - (${pos[0]}, ${pos[1]})`;
+        routes.add(route);
+        routes.add(reverseRoute);
         pos = newPos;
     })
     
-    const answer = routes.size;
+    const answer = routes.size / 2;
     return answer;
 }
