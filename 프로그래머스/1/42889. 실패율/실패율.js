@@ -1,17 +1,16 @@
 function solution(N, stages) {
-    let staging = new Array(N+1).fill(0);
-    stages.forEach((where) => {
-        staging[where-1]++;
+    const status = new Array(N+1).fill(0);
+    stages.forEach((stage) => {
+        for(let i=0; i<stage; i++){
+            status[i]++;
+        }
     })
-    
-    let passed = stages.length;
-    const failRate = staging.map((user, index) => {
-        const rate = user / passed;
-        passed -= user;
-        return [rate, index+1];
-    }).slice(0, N);
+    let failRate = new Array(N).fill(0);
+    failRate = failRate.map((v, i) => {
+        const fails = (status[i] - status[i+1]) / status[i];
+        return [fails, i];
+    })
     failRate.sort((a, b) => b[0] - a[0]);
-    
-    let answer = failRate.map((rate) => rate[1]);
+    const answer = failRate.map((v) => v[1] + 1);
     return answer;
 }
