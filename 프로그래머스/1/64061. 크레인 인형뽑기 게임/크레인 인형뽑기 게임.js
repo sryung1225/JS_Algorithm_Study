@@ -13,16 +13,15 @@ function solution(board, moves) {
     
     let answer = 0;
     const stack = [];
-    moves.forEach((move) => {
-        if(newBoard[move - 1].length > 0){
-            const doll = newBoard[move - 1].pop();
-            if(stack[stack.length - 1] === doll){
-                stack.pop();
-                answer += 2;
-            } else {
-                stack.push(doll);
-            }
+    for(let move of moves){
+        if(newBoard[move - 1].length === 0) continue;
+        const doll = newBoard[move - 1].pop();
+        if(stack[stack.length - 1] === doll){
+            stack.pop();
+            answer += 2;
+        } else {
+            stack.push(doll);
         }
-    })
+    }
     return answer;
 }
