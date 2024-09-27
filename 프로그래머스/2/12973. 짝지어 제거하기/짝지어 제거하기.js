@@ -1,11 +1,11 @@
-function solution(s)
-{
-    let stack = [];
-    for(let i=0; i<s.length; i++){
-        stack.push(s[i]);
-        if(stack[stack.length-1] === stack[stack.length-2]){
+function solution(s) {
+    const stack = [];
+    stack.push(s[0]);
+    for(let i=1; i<s.length; i++){
+        if(stack[stack.length - 1] === s[i]){
             stack.pop();
-            stack.pop();
+        } else {
+            stack.push(s[i]);
         }
     }
     return stack.length === 0 ? 1 : 0;
