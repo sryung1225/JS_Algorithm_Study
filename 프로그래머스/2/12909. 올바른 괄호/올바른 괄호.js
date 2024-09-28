@@ -1,9 +1,16 @@
 function solution(s){
-    let startCount = 0;
-    for(let i=0; i<s.length; i++) {
-        if(s[i] === "(") startCount++;
-        else if(s[i] === ")") startCount--;
-        if(startCount < 0) return false;
+    let answer = true;
+    const stack = [];
+    for(let c of s){
+        if(c === "("){
+            stack.push(c);
+        } else if(c === ")" && stack.length > 0){
+            stack.pop();
+        } else {
+            answer = false;
+            break;
+        }
     }
-    return startCount === 0 ? true : false;
+    if(stack.length > 0) answer = false;
+    return answer;
 }
