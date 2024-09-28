@@ -1,8 +1,11 @@
-function solution(arr)
-{
+function solution(arr) {
     const answer = [];
-    arr.forEach((num) => {
-        if(num !== answer[answer.length - 1]){
+    arr.forEach((num, idx) => {
+        if(idx === 0){
+            answer.push(num);
+            return;
+        }
+        if(answer[answer.length - 1] !== num){
             answer.push(num);
         }
     })
