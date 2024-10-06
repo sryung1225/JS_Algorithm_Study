@@ -1,18 +1,15 @@
 function solution(progresses, speeds) {
-    let answer = [];
-    let day = 0;
-    while(progresses.length > 0){
-        while(progresses[0] < 100){
-            day++;
-            progresses = progresses.map((q, idx) => q + speeds[idx]);
+    const size = progresses.length;
+    const answer = [];
+    for(let i=0; i<size; i++){
+        const days = Math.ceil((100 - progresses[i]) / speeds[i]);
+        let count = 1;
+        for(let j=i+1; j<size; j++){
+            if(progresses[j] + (speeds[j] * days) >= 100) count++;
+            else break;
         }
-        let completed = 0;
-        while(progresses[0] >= 100){
-            completed++;
-            progresses.shift();
-            speeds.shift();
-        }
-        answer.push(completed);
+        answer.push(count);
+        i += count - 1;
     }
     return answer;
 }
