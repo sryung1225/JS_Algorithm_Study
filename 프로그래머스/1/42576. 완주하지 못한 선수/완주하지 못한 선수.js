@@ -1,9 +1,9 @@
 function solution(participant, completion) {
     participant.sort();
     completion.sort();
-    for(let i=0; i<completion.length; i++){
-        if(completion[i] !== participant[i]) 
-            return participant[i];
+    while(participant.length > 0){
+        const p = participant.pop();
+        const c = completion.pop();
+        if(p !== c) return p;
     }
-    return participant[participant.length - 1];
 }
