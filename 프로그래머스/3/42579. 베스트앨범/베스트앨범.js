@@ -1,19 +1,24 @@
 function solution(genres, plays) {
-    const playsArr = genres.map((genre, index) => [genre, plays[index], index]);
-    
     const genresObj = {};
-    genres.forEach((genre, index) => {
-        genresObj[genre] = (genresObj[genre] || 0) + plays[index];
-    })
-    const bestGenres = Object.entries(genresObj).sort((a, b) => a[1] - b[1]).map((genre) => genre[0]);
+    const playObj = {};
+    for(let i=0; i<genres.length; i++){
+        const genre = genres[i];
+        const play = plays[i];
+        if(!genresObj[genre]){
+            genresObj[genre] = [];
+            playObj[genre] = 0;
+        }
+        genresObj[genre].push([i, play]);
+        playObj[genre] += play;
+    }
+    const bestGenres = Object.keys(playObj).sort((a, b) => playObj[b] - playObj[a]);
     
     const answer = [];
-    while(bestGenres.length > 0){
-        const genre = bestGenres.pop();
-        const matchGenre = playsArr.filter((play) => play[0] === genre).sort((a, b) => {
-            return a[1] === b[1] ? a[2] - b[2] : b[1] - a[1];
-        })
-        answer.push(...matchGenre.slice(0, 2).map((song) => song[2]));
-    }
+    bestGenres.forEach((genre) => {
+        const matchGenre = genresObj[genre].sort((a, b) => {
+            return a[1] === b[1] ? a[0] - b[0] : b[1] - a[1];
+        });
+        answer.push(...matchGenre.slice(0, 2).map((song) => song[0]));
+    });
     return answer;
 }
