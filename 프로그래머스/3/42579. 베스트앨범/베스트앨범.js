@@ -10,10 +10,10 @@ function solution(genres, plays) {
     const answer = [];
     while(bestGenres.length > 0){
         const genre = bestGenres.pop();
-        const matchGenre = playsArr.filter((play) => play[0] === genre).sort((a, b) => a[1] === b[1] ? a[2] - b[2] : b[1] - a[1]);
-        for(let i=0; i<Math.min(2, matchGenre.length); i++){
-            answer.push(matchGenre[i][2]);
-        }
+        const matchGenre = playsArr.filter((play) => play[0] === genre).sort((a, b) => {
+            return a[1] === b[1] ? a[2] - b[2] : b[1] - a[1];
+        })
+        answer.push(...matchGenre.slice(0, 2).map((song) => song[2]));
     }
     return answer;
 }
