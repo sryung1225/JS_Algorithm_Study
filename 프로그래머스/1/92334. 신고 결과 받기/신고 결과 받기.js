@@ -1,26 +1,21 @@
 function solution(id_list, report, k) {
-    let id = id_list.reduce((acc, cur, idx) => {
-        acc[cur] = idx;
-        return acc;
-    }, {});
-    let size = id_list.length;
-    let history = Array.from(Array(size), () => Array(size).fill(0));
-    
-    report.forEach((item) => {
-        const [f, t] = item.split(" ");
-        if(history[id[f]][id[t]] === 0){
-            history[id[f]][id[t]] = 1;
-            history[id[t]][id[t]]++;
+    const reportObj = {};
+    report.forEach((rep) => {
+        const [from, to] = rep.split(" ");
+        if(!reportObj[to]) reportObj[to] = [0, new Set()];
+        if(!reportObj[to][1].has(from)){
+            reportObj[to][0]++;
+            reportObj[to][1].add(from);
         }
     })
-    
-    let mails = Array(size).fill(0);
-    for(let i=0; i<size; i++){
-        if(history[i][i] >= k){
-            for(let j=0; j<size; j++){
-                if(i !== j && history[j][i] === 1) mails[j]++;
-            }
+    const reportArr = Object.entries(reportObj);
+    let answer = new Array(id_list.length).fill(0);
+    reportArr.forEach((rep) => {
+        if(rep[1][0] >= k){
+            [...rep[1][1]].forEach((id) => {
+                answer[id_list.indexOf(id)]++;
+            })
         }
-    }
-    return mails;
+    })
+    return answer;
 }
