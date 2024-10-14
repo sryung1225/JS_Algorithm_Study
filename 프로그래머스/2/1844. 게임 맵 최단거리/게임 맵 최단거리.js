@@ -23,20 +23,18 @@ function solution(maps) {
     const visited = Array.from(Array(n), () => Array(m).fill(false));
     visited[0][0] = true;
     
-    let answer = -1;
-    while(!queue.isEmpty() && answer === -1){    
+    while(!queue.isEmpty()){    
         const [x, y, dist] = queue.pop();
+        if(x === n - 1 && y === m - 1){
+            return dist;
+        }
         directions.forEach(([dx, dy]) => {
             const [nx, ny] = [x + dx, y + dy];
-            if(nx === n - 1 && ny === m - 1) {
-                answer = dist + 1;
-                return;
-            }
             if(nx < n && nx >= 0 && ny < m && ny >= 0 && maps[nx][ny] === 1 && !visited[nx][ny]) {
                 queue.push([nx, ny, dist + 1]);
                 visited[nx][ny] = true;
             }
         })
     }
-    return answer;
+    return -1;
 }
