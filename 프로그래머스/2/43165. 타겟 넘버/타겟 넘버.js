@@ -1,15 +1,17 @@
-// 모든 경우의 수 => DFS (스택 / 재귀함수)
-
 function solution(numbers, target) {
     let answer = 0;
-    function dfs(index, sum){
+    const stack = [];
+    stack.push([0, 0]); // [index, sum]
+    while(stack.length > 0){
+        const [index, sum] = stack.pop();
         if(index === numbers.length){
-            if(target === sum) answer++;
-            return;
+            if(sum === target){
+                answer++;
+            }
+        } else {
+            stack.push([index + 1, sum + numbers[index]]);
+            stack.push([index + 1, sum - numbers[index]]);   
         }
-        dfs(index + 1, sum + numbers[index]);
-        dfs(index + 1, sum - numbers[index]);
     }
-    dfs(0, 0);
     return answer;
 }
