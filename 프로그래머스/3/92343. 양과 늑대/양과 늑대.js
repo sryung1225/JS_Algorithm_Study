@@ -12,11 +12,10 @@ function solution(info, edges) {
         if(newWolf >= newSheep) return;
         maxSheep = Math.max(maxSheep, newSheep);
         
-        const nextPossible = [...possible];
-        nextPossible.splice(nextPossible.indexOf(node), 1);
-        (edgesObj[node] || []).forEach((neighbor) => {
-            nextPossible.push(neighbor);
-        });
+        const nextPossible = new Set(possible);
+        console.log(nextPossible, node)
+        nextPossible.delete(node);
+        (edgesObj[node] || []).forEach((neighbor) => nextPossible.add(neighbor));
         nextPossible.forEach((nextNode) => {
             dfs(nextNode, newSheep, newWolf, nextPossible);
         })   
