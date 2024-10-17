@@ -6,20 +6,22 @@ function solution(info, edges) {
     })
     
     let maxSheep = 0;
-    function dfs(node, sheep, wolf, possible){
+    const stack = [[0, 0, 0, [0]]]; // [node, sheep, wolf, possible]
+    while(stack.length > 0){
+        const [node, sheep, wolf, possible] = stack.pop();
         const newSheep = sheep + (info[node] === 0 ? 1 : 0);
         const newWolf = wolf + (info[node] === 1 ? 1 : 0);
-        if(newWolf >= newSheep) return;
+        if(newWolf >= newSheep) continue;
         maxSheep = Math.max(maxSheep, newSheep);
         
-        const nextPossible = new Set(possible);
-        console.log(nextPossible, node)
-        nextPossible.delete(node);
-        (edgesObj[node] || []).forEach((neighbor) => nextPossible.add(neighbor));
+        const nextPossible = [...possible];
+        nextPossible.splice(nextPossible.indexOf(node), 1);
+        (edgesObj[node] || []).forEach((neighbor) => {
+            nextPossible.push(neighbor);
+        });
         nextPossible.forEach((nextNode) => {
-            dfs(nextNode, newSheep, newWolf, nextPossible);
+            stack.push([nextNode, newSheep, newWolf, nextPossible]);
         })   
     }
-    dfs(0, 0, 0, [0]);
     return maxSheep;
 }
