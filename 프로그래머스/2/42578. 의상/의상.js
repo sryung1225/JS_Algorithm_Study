@@ -1,12 +1,12 @@
 function solution(clothes) {
-    const obj = {};
+    const types = {};
     clothes.forEach(([name, type]) => {
-        if(!obj[type]) obj[type] = [];
-        obj[type].push(name);
+        if(!types[type]) types[type] = [];
+        types[type].push(name);
     })
     let answer = 1;
-    Object.keys(obj).forEach((type) => {
-        answer *= (obj[type].length + 1);
-    }) 
+    Object.entries(types).forEach(([_, name]) => {
+        answer *= (name.length + 1);
+    })
     return answer - 1;
 }
