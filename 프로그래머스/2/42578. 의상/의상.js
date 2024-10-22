@@ -1,11 +1,8 @@
 function solution(clothes) {
-    const types = {};
-    clothes.forEach(([name, type]) => {
-        types[type] = (types[type] || 0) + 1;
-    })
-    let answer = 1;
-    Object.values(types).forEach((count) => {
-        answer *= (count + 1);
-    })
+    const types = clothes.reduce((obj, [_, type]) => {
+        obj[type] = (obj[type] || 0) + 1;
+        return obj;
+    }, {});
+    let answer = Object.values(types).reduce((acc, cur) => acc * (cur + 1), 1);
     return answer - 1;
 }
