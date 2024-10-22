@@ -1,25 +1,33 @@
 function solution(msg) {
-    const dic = "_ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""); // 27번부터 신규 추가
+    const oldDic = "_ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const newDic = new Map();
+    let index = 27;
+
     const answer = [];
-    
-    for(let i=0; i<msg.length; i++){
-        let word = msg[i];
-        let num = dic.indexOf(word);
-        let next = 0;
-        let moreCheck = true;
-        while(moreCheck) {
-            let hasWord = dic.indexOf(word); // dic에 word 있나요?
-            if(hasWord === -1) { // 없어요! => 탐색 종료
-                moreCheck = false;
-                dic.push(word);
-                i += next - 1;
-            } else { // 있어요! => 다음 탐색 준비
-                num = hasWord;
-                next++;
-                word += msg[i + next];
+
+    let left = 0;
+    while (left < msg.length) {
+        let word = msg[left];
+        let num = oldDic.indexOf(word);
+        let found = false;
+        for(let right = left + 1; right <= msg.length; right++){
+            const nextWord = word + (msg[right] || "");
+            if (newDic.has(nextWord)) {
+                word = nextWord;
+                num = newDic.get(nextWord);
+            } else {
+                answer.push(num);
+                newDic.set(nextWord, index++);
+                left = right - 1;
+                found = true;
+                break;
             }
         }
-        answer.push(num); 
+        if(!found){
+            answer.push(num);
+            break;
+        }
+        left++;
     }
     return answer;
-  }
+}
