@@ -1,23 +1,23 @@
 function solution(msg) {
     const dic = "_ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     const answer = [];
-    
     for(let left = 0; left < msg.length; left++){
-        let right = left;
-        let word = "";
-        let [prev, next] = [0, 0];
-        for(; next !== -1 && right < msg.length; right++){
-            word = msg.slice(left, right + 1);
-            [prev, next] = [next, dic.indexOf(word)];
+        let word = msg[left];
+        let num = dic.indexOf(word);
+        let right = 0;
+        let found = false;
+        while(!found){
+            let nextNum = dic.indexOf(word);
+            if(nextNum !== -1){
+                word += msg[left + ++right];
+                num = nextNum;
+            } else {
+                found = true;
+                dic.push(word);
+                left += right - 1;
+            }
         }
-        if(next === -1){
-            answer.push(prev);
-            dic.push(word);
-            left = right - 2;
-        } else if(next > 0 && right === msg.length){
-            answer.push(next);
-            break;
-        }
+        answer.push(num);
     }
     return answer;
 }
