@@ -1,33 +1,26 @@
 function solution(msg) {
-    const oldDic = "_ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const newDic = new Map();
-    let index = 27;
-
+    const dic = "_ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     const answer = [];
-
     let left = 0;
     while (left < msg.length) {
-        let word = msg[left];
-        let num = oldDic.indexOf(word);
-        let found = false;
-        for(let right = left + 1; right <= msg.length; right++){
-            const nextWord = word + (msg[right] || "");
-            if (newDic.has(nextWord)) {
-                word = nextWord;
-                num = newDic.get(nextWord);
-            } else {
-                answer.push(num);
-                newDic.set(nextWord, index++);
-                left = right - 1;
-                found = true;
-                break;
-            }
+        let right = left;
+        let word = "";
+        let [prev, next] = [0, 0];
+        while(next !== -1 && right < msg.length){
+            right++;
+            word = msg.slice(left, right);
+            [prev, next] = [next, dic.indexOf(word)];
         }
-        if(!found){
-            answer.push(num);
+        if(next === -1){
+            answer.push(prev);
+            dic.push(word);
+            left = right - 1;
+        } else if(next > 0 && right === msg.length){
+            answer.push(next);
             break;
+        } else {
+            left++;
         }
-        left++;
     }
     return answer;
 }
