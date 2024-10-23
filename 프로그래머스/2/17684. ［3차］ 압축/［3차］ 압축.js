@@ -2,22 +2,21 @@ function solution(msg) {
     const dic = "_ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     const answer = [];
     for(let left = 0; left < msg.length; left++){
+        let right = left + 1;
         let word = msg[left];
-        let num = dic.indexOf(word);
-        let right = 0;
+        let [prev, next] = [0, dic.indexOf(word)];
         let found = false;
         while(!found){
-            let nextNum = dic.indexOf(word);
-            if(nextNum !== -1){
-                word += msg[left + ++right];
-                num = nextNum;
+            if(next !== -1){
+                word += msg[right++];
+                [prev, next] = [next, dic.indexOf(word)];
             } else {
                 found = true;
                 dic.push(word);
-                left += right - 1;
+                left = right - 2;
             }
         }
-        answer.push(num);
+        answer.push(prev);
     }
     return answer;
 }
