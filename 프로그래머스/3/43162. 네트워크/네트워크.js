@@ -2,20 +2,17 @@ function solution(n, computers) {
     const visited = Array(n).fill(false);
     let answer = 0;
     
-    function dfs(node) {
-        visited[node] = true;
-        for(let i=0; i<n; i++){
-            if(computers[node][i] === 1 && !visited[i]){
-                dfs(i);
-            }
+    function dfs(i) {
+        visited[i] = true;
+        for(let j=0; j<n; j++){
+            if(computers[i][j] === 1 && !visited[j]) dfs(j);
         }
     }
     
     for(let i=0; i<n; i++){
-        if(!visited[i]){
-            dfs(i);
-            answer++;
-        }
+        if(visited[i]) continue;
+        dfs(i);
+        answer++;
     }
     return answer;
 }
