@@ -4,14 +4,13 @@ function solution(operations) {
         const [command, value] = operation.split(" ");
         if(command === "I") {
             queue.push(Number(value));
+            queue.sort((a, b) => b - a);
         } else if(command === "D" && value === "1"){
-            const max = Math.max(...queue);
-            queue.splice(queue.indexOf(max), 1);  
+            queue.shift(); 
         } else if(command === "D" && value === "-1"){
-            const min = Math.min(...queue);
-            queue.splice(queue.indexOf(min), 1);
+            queue.pop();
         }
     })
     if(queue.length === 0) return [0, 0];
-    return [Math.max(...queue), Math.min(...queue)];
+    return [queue[0], queue[queue.length - 1]];
 }
